@@ -1,0 +1,50 @@
+---
+interface Segment {
+  value: string | number;
+  label: string;
+}
+
+interface Props {
+  segments: Segment[];
+}
+
+const { segments } = Astro.props;
+---
+
+<div class="pie-chart">
+  {segments.map((segment) => (
+    <div class="pie-segment">
+      <div class="pie-value">{segment.value}</div>
+      <div class="pie-label">{segment.label}</div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .pie-chart {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    flex-wrap: wrap;
+  }
+
+  .pie-segment {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    min-width: 140px;
+  }
+
+  .pie-value {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .pie-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    margin-top: var(--spacing-xs);
+  }
+</style>

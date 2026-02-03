@@ -1,0 +1,28 @@
+# Robots.txt for ferencgal.com
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ferencgal.com/sitemap.xml
+
+# Allow AI crawlers to index content
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

@@ -1,0 +1,68 @@
+---
+interface Step {
+  label: string;
+  value: string | number;
+  width?: number;
+}
+
+interface Props {
+  steps: Step[];
+}
+
+const { steps } = Astro.props;
+
+// Calculate widths if not provided
+const stepsWithWidth = steps.map((step, index) => ({
+  ...step,
+  width: step.width ?? (100 - (index * (60 / steps.length)))
+}));
+---
+
+<div class="funnel-chart">
+  {stepsWithWidth.map((step) => (
+    <div class="funnel-item" style={`width: ${step.width}%`}>
+      {step.label} <span class="funnel-value">{step.value}</span>
+    </div>
+  ))}
+</div>
+
+<style>
+  .funnel-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .funnel-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    text-align: center;
+    transition: transform 0.2s ease;
+  }
+
+  .funnel-item:hover {
+    transform: scale(1.02);
+  }
+
+  .funnel-value {
+    margin-left: var(--spacing-sm);
+    font-weight: 700;
+  }
+
+  @media (max-width: 768px) {
+    .funnel-item {
+      font-size: var(--font-size-xs);
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+  }
+</style>

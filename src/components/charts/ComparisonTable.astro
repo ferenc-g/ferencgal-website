@@ -1,0 +1,91 @@
+---
+interface Row {
+  metric: string;
+  weak: string;
+  strong: string;
+}
+
+interface Props {
+  rows: Row[];
+  weakLabel?: string;
+  strongLabel?: string;
+}
+
+const { rows, weakLabel = "Weak Brand", strongLabel = "Strong Brand" } = Astro.props;
+---
+
+<table class="comparison-table">
+  <thead>
+    <tr>
+      <th>Metric</th>
+      <th class="weak">{weakLabel}</th>
+      <th class="strong">{strongLabel}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {rows.map((row) => (
+      <tr>
+        <td>{row.metric}</td>
+        <td class="weak">{row.weak}</td>
+        <td class="strong">{row.strong}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+<style>
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    box-sizing: border-box;
+  }
+
+  .comparison-table th {
+    padding: var(--spacing-md);
+    text-align: left;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    background-color: var(--color-gray-100);
+    border-bottom: 2px solid var(--color-gray-200);
+  }
+
+  .comparison-table th:first-child {
+    border-radius: var(--radius-sm) 0 0 0;
+  }
+
+  .comparison-table th:last-child {
+    border-radius: 0 var(--radius-sm) 0 0;
+  }
+
+  .comparison-table th.weak {
+    color: #dc3545;
+  }
+
+  .comparison-table th.strong {
+    color: var(--color-accent);
+  }
+
+  .comparison-table td {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .comparison-table td:first-child {
+    font-weight: 500;
+    color: var(--color-gray-900);
+  }
+
+  .comparison-table td.weak {
+    color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.05);
+  }
+
+  .comparison-table td.strong {
+    color: var(--color-accent-dark);
+    background-color: rgba(42, 157, 143, 0.05);
+    font-weight: 500;
+  }
+</style>

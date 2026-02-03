@@ -1,0 +1,261 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    pubDate: Date;
+    category: string;
+    keywords?: string;
+    image?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+const formattedDate = frontmatter.pubDate.toLocaleDateString('en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric'
+});
+const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
+---
+
+<BaseLayout
+  title={`${frontmatter.title} | Ferenc Gal`}
+  description={frontmatter.description}
+  ogType="article"
+  publishedTime={isoDate}
+  keywords={frontmatter.keywords}
+>
+  <Fragment slot="head">
+    <!-- Article Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": frontmatter.title,
+      "description": frontmatter.description,
+      "author": {
+        "@type": "Person",
+        "name": "Ferenc Gal",
+        "url": "https://ferencgal.com"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Ferenc Gal"
+      },
+      "datePublished": isoDate,
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": Astro.url.href
+      }
+    })} />
+  </Fragment>
+
+  <header class="blog-post-header">
+    <div class="container">
+      <div class="blog-post-meta">
+        <span class="blog-post-tag">{frontmatter.category}</span>
+        <span class="blog-post-date">{formattedDate}</span>
+      </div>
+      <h1 class="blog-post-title">{frontmatter.title}</h1>
+      <p class="blog-post-description">{frontmatter.description}</p>
+      <div class="blog-post-author">
+        <img src="/fg-headshot.webp" alt="Ferenc Gal">
+        <div class="blog-post-author-info">
+          <span class="blog-post-author-name">Ferenc Gal</span>
+          <span class="blog-post-author-title">Recruitment Marketing & Employer Branding Consultant</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <article class="blog-post-content">
+    <div class="container">
+      <slot />
+    </div>
+  </article>
+
+  <footer class="blog-post-footer">
+    <div class="container">
+      <div class="blog-post-cta">
+        <h3>Need help with your employer brand?</h3>
+        <p>I help organisations reduce cost per hire through strategic employer branding and recruitment marketing.</p>
+        <a href="/#contact" class="btn">Get in Touch</a>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+/* Blog Post Specific Styles */
+.blog-post-header {
+    padding: calc(var(--nav-height) + var(--spacing-2xl)) var(--spacing-lg) var(--spacing-xl);
+    background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+}
+
+.blog-post-header .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.blog-post-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.blog-post-tag {
+    display: inline-block;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border-radius: var(--radius-sm);
+}
+
+.blog-post-date {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+}
+
+.blog-post-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-900);
+}
+
+.blog-post-description {
+    font-size: var(--font-size-xl);
+    color: var(--color-gray-500);
+    line-height: 1.6;
+}
+
+.blog-post-author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-gray-200);
+}
+
+.blog-post-author img {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+}
+
+.blog-post-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post-author-name {
+    font-weight: 600;
+    color: var(--color-gray-900);
+}
+
+.blog-post-author-title {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+}
+
+/* Blog Content */
+.blog-post-content {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.blog-post-content .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.blog-post-content :global(h2) {
+    font-size: var(--font-size-2xl);
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+}
+
+.blog-post-content :global(p) {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-gray-600);
+}
+
+.blog-post-content :global(a) {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+    text-underline-offset: 2px;
+}
+
+.blog-post-content :global(a:hover) {
+    color: var(--color-accent);
+}
+
+.blog-post-content :global(strong) {
+    color: var(--color-gray-900);
+    font-weight: 600;
+}
+
+.blog-post-content :global(ul), .blog-post-content :global(ol) {
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-xl);
+}
+
+.blog-post-content :global(li) {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Blog Post Footer */
+.blog-post-footer {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    background-color: var(--color-gray-50);
+}
+
+.blog-post-footer .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.blog-post-cta {
+    background-color: var(--color-primary);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+}
+
+.blog-post-cta h3 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.blog-post-cta p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--spacing-lg);
+}
+
+.blog-post-cta .btn {
+    background-color: var(--color-accent);
+}
+
+.blog-post-cta .btn:hover {
+    background-color: var(--color-accent-light);
+}
+</style>

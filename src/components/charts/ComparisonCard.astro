@@ -1,0 +1,81 @@
+---
+interface Side {
+  header: string;
+  items: string[];
+  accent?: 'primary' | 'secondary';
+}
+
+interface Props {
+  left: Side;
+  right: Side;
+}
+
+const { left, right } = Astro.props;
+---
+
+<div class="comparison-card">
+  <div class={`comparison-side left ${left.accent || 'primary'}`}>
+    <div class="comparison-header">{left.header}</div>
+    <ul class="comparison-list">
+      {left.items.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+  <div class={`comparison-side right ${right.accent || 'secondary'}`}>
+    <div class="comparison-header">{right.header}</div>
+    <ul class="comparison-list">
+      {right.items.map((item) => <li>{item}</li>)}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .comparison-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .comparison-side {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+  }
+
+  .comparison-side.left.primary {
+    border-left: 4px solid var(--color-primary);
+  }
+
+  .comparison-side.right.secondary {
+    border-left: 4px solid var(--color-accent);
+  }
+
+  .comparison-header {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .comparison-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .comparison-list li {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid var(--color-gray-100);
+  }
+
+  .comparison-list li:last-child {
+    border-bottom: none;
+  }
+
+  @media (max-width: 768px) {
+    .comparison-card {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

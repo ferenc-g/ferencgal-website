@@ -1,0 +1,73 @@
+---
+interface Metric {
+  label: string;
+  target?: string;
+  value: number;
+  maxValue?: number;
+}
+
+interface Props {
+  metrics: Metric[];
+}
+
+const { metrics } = Astro.props;
+---
+
+<div class="metric-bars">
+  {metrics.map((metric) => (
+    <div class="metric-item">
+      <div class="metric-header">
+        <span class="metric-label">{metric.label}</span>
+        {metric.target && <span class="metric-target">{metric.target}</span>}
+      </div>
+      <div class="metric-track">
+        <div class="metric-fill" style={`width: ${(metric.value / (metric.maxValue || 100)) * 100}%`}></div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .metric-bars {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .metric-item {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+  }
+
+  .metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .metric-label {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-gray-900);
+  }
+
+  .metric-target {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-500);
+  }
+
+  .metric-track {
+    height: 12px;
+    background-color: var(--color-gray-200);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .metric-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+    border-radius: var(--radius-sm);
+  }
+</style>

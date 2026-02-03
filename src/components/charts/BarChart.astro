@@ -1,0 +1,84 @@
+---
+interface Bar {
+  label: string;
+  value: number;
+  displayValue?: string;
+}
+
+interface Props {
+  bars: Bar[];
+  maxValue?: number;
+}
+
+const { bars, maxValue = 100 } = Astro.props;
+---
+
+<div class="bar-chart">
+  {bars.map((bar) => (
+    <div class="bar-item">
+      <span class="bar-label">{bar.label}</span>
+      <div class="bar-track">
+        <div class="bar-fill" style={`width: ${(bar.value / maxValue) * 100}%`}>
+          <span class="bar-value">{bar.displayValue || `${bar.value}%`}</span>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .bar-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .bar-label {
+    width: 180px;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    flex-shrink: 0;
+  }
+
+  .bar-track {
+    flex: 1;
+    height: 32px;
+    background-color: var(--color-gray-200);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: var(--spacing-sm);
+    transition: width 0.5s ease;
+    min-width: fit-content;
+  }
+
+  .bar-value {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-white);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    .bar-label {
+      width: 100px;
+      font-size: var(--font-size-xs);
+    }
+  }
+</style>
