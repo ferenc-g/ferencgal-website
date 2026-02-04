@@ -1,0 +1,124 @@
+---
+interface Stat {
+  value: string | number;
+  label: string;
+  icon: string;
+}
+
+interface Props {
+  stats: Stat[];
+  columns?: 2 | 3 | 4;
+  color?: 'primary' | 'accent' | 'secondary' | 'mixed';
+}
+
+const { stats, columns = 3, color = 'mixed' } = Astro.props;
+
+const colorClasses = ['primary', 'accent', 'secondary'];
+---
+
+<div class={`icon-stat-grid icon-stat-grid--cols-${columns}`}>
+  {stats.map((stat, index) => {
+    const statColor = color === 'mixed' ? colorClasses[index % colorClasses.length] : color;
+    return (
+      <div class={`icon-stat icon-stat--${statColor}`}>
+        <div class="icon-stat-icon">
+          <Fragment set:html={stat.icon} />
+        </div>
+        <div class="icon-stat-content">
+          <span class="icon-stat-value">{stat.value}</span>
+          <span class="icon-stat-label">{stat.label}</span>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
+<style>
+  .icon-stat-grid {
+    display: grid;
+    gap: var(--spacing-md);
+  }
+
+  .icon-stat-grid--cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .icon-stat-grid--cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .icon-stat-grid--cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .icon-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--spacing-lg);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+  }
+
+  .icon-stat-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .icon-stat--primary .icon-stat-icon {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  }
+
+  .icon-stat--accent .icon-stat-icon {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+  }
+
+  .icon-stat--secondary .icon-stat-icon {
+    background: linear-gradient(135deg, var(--color-accent-secondary) 0%, var(--color-accent-secondary-dark) 100%);
+  }
+
+  .icon-stat-icon :global(svg) {
+    width: 28px;
+    height: 28px;
+    stroke: var(--color-white);
+  }
+
+  .icon-stat-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .icon-stat-value {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--color-gray-900);
+  }
+
+  .icon-stat-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+  }
+
+  @media (max-width: 768px) {
+    .icon-stat-grid--cols-3,
+    .icon-stat-grid--cols-4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .icon-stat-grid--cols-2,
+    .icon-stat-grid--cols-3,
+    .icon-stat-grid--cols-4 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

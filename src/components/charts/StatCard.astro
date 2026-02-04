@@ -1,0 +1,130 @@
+---
+interface Props {
+  value: string | number;
+  label: string;
+  trend?: {
+    direction: 'up' | 'down';
+    value: string;
+  };
+  icon?: string;
+  color?: 'primary' | 'accent' | 'secondary';
+}
+
+const { value, label, trend, icon, color = 'primary' } = Astro.props;
+---
+
+<div class={`stat-card stat-card--${color}`}>
+  {icon && (
+    <div class="stat-icon">
+      <Fragment set:html={icon} />
+    </div>
+  )}
+  <div class="stat-content">
+    <div class="stat-value-row">
+      <span class="stat-value">{value}</span>
+      {trend && (
+        <span class={`stat-trend stat-trend--${trend.direction}`}>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            {trend.direction === 'up' ? (
+              <path d="M7 17l5-5 5 5M7 7l5 5 5-5" />
+            ) : (
+              <path d="M7 7l5 5 5-5M7 17l5-5 5 5" />
+            )}
+          </svg>
+          {trend.value}
+        </span>
+      )}
+    </div>
+    <span class="stat-label">{label}</span>
+  </div>
+</div>
+
+<style>
+  .stat-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+  }
+
+  .stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+  }
+
+  .stat-card--accent .stat-icon {
+    background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-dark) 100%);
+  }
+
+  .stat-card--secondary .stat-icon {
+    background: linear-gradient(135deg, var(--color-accent-secondary) 0%, var(--color-accent-secondary-dark) 100%);
+  }
+
+  .stat-icon :global(svg) {
+    width: 24px;
+    height: 24px;
+    stroke: var(--color-white);
+  }
+
+  .stat-content {
+    flex: 1;
+  }
+
+  .stat-value-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-sm);
+  }
+
+  .stat-value {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .stat-card--accent .stat-value {
+    color: var(--color-accent);
+  }
+
+  .stat-card--secondary .stat-value {
+    color: var(--color-accent-secondary);
+  }
+
+  .stat-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+  }
+
+  .stat-trend svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .stat-trend--up {
+    color: #10b981;
+  }
+
+  .stat-trend--down {
+    color: #ef4444;
+  }
+
+  .stat-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    margin-top: var(--spacing-xs);
+  }
+</style>

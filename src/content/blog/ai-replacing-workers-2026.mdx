@@ -27,12 +27,22 @@ import ComparisonTable from '../../components/charts/ComparisonTable.astro';
 import ComparisonCard from '../../components/charts/ComparisonCard.astro';
 import MetricBars from '../../components/charts/MetricBars.astro';
 import Callout from '../../components/charts/Callout.astro';
+import ComparisonChart from '../../components/charts/ComparisonChart.astro';
+import QuoteCallout from '../../components/charts/QuoteCallout.astro';
+import IconStatGrid from '../../components/charts/IconStatGrid.astro';
 
 In January 2026, an AI agent named Clawd Clawderberg did something remarkable. It built a social network called [Moltbook](https://fortune.com/2026/01/31/ai-agent-moltbot-clawdbot-openclaw-data-privacy-security-nightmare-moltbook-social-network/) where only AI agents can post, comment, and interact. Humans are permitted to observe, but nothing more.
 
 Within four days, 1.5 million AI agents had joined. They created 13,780 communities, wrote 62,499 posts, and generated over 2.3 million comments. All without human intervention.
 
-Elon Musk called it evidence of "the very early stages of singularity." IMF Managing Director Kristalina Georgieva warned that AI is "hitting the labor market like a tsunami." And if you lead a company with employees, you are now facing a question that will define the next decade of your organisation.
+<QuoteCallout
+  quote="AI is hitting the labor market like a tsunami."
+  author="Kristalina Georgieva"
+  role="IMF Managing Director"
+  color="primary"
+/>
+
+Elon Musk called it evidence of "the very early stages of singularity." And if you lead a company with employees, you are now facing a question that will define the next decade of your organisation.
 
 <ChartContainer title="The AI Workforce Shift">
   <StatRow stats={[
@@ -128,6 +138,17 @@ The companies racing to replace workers are often ignoring a critical variable: 
 A [Glassdoor analysis](https://info.recruitics.com/blog/ai-burnout-stagflation-talent-fatigue-why-employer-branding-must-evolve-in-2026) revealed a 41% year-over-year surge in mentions of "fatigue" in company reviews. This is not traditional burnout. It is the result of economic anxiety, political tension, and rapid AI disruption converging at once.
 
 Employee concerns about AI-related job loss have jumped from 28% in 2024 to 40% in 2026, according to [Mercer's Global Talent Trends report](https://www.demandsage.com/ai-job-replacement-stats/). Even more telling: 62% of employees feel their leaders underestimate AI's emotional and psychological impact.
+
+<ChartContainer title="Rising Employee Anxiety About AI">
+  <ComparisonChart
+    items={[
+      { label: "Fear Job Loss from AI", before: "28%", after: "40%" },
+      { label: "Feel Leaders Underestimate Impact", before: "—", after: "62%" }
+    ]}
+    beforeLabel="2024"
+    afterLabel="2026"
+  />
+</ChartContainer>
 
 <ChartContainer title="Replace vs. Augment: The Outcomes">
   <ComparisonTable

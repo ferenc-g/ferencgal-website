@@ -1,0 +1,113 @@
+---
+interface Props {
+  quote: string;
+  author?: string;
+  role?: string;
+  source?: string;
+  color?: 'primary' | 'accent' | 'secondary';
+}
+
+const { quote, author, role, source, color = 'accent' } = Astro.props;
+---
+
+<blockquote class={`quote-callout quote-callout--${color}`}>
+  <svg class="quote-icon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+  </svg>
+  <p class="quote-text">{quote}</p>
+  {(author || source) && (
+    <footer class="quote-footer">
+      {author && (
+        <cite class="quote-author">
+          {author}
+          {role && <span class="quote-role">, {role}</span>}
+        </cite>
+      )}
+      {source && <span class="quote-source">{source}</span>}
+    </footer>
+  )}
+</blockquote>
+
+<style>
+  .quote-callout {
+    position: relative;
+    padding: var(--spacing-xl);
+    padding-left: var(--spacing-2xl);
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--color-accent);
+    margin: 0;
+  }
+
+  .quote-callout--primary {
+    border-left-color: var(--color-primary);
+  }
+
+  .quote-callout--secondary {
+    border-left-color: var(--color-accent-secondary);
+  }
+
+  .quote-icon {
+    position: absolute;
+    top: var(--spacing-lg);
+    left: var(--spacing-md);
+    width: 24px;
+    height: 24px;
+    opacity: 0.2;
+  }
+
+  .quote-callout--primary .quote-icon {
+    color: var(--color-primary);
+  }
+
+  .quote-callout--accent .quote-icon {
+    color: var(--color-accent);
+  }
+
+  .quote-callout--secondary .quote-icon {
+    color: var(--color-accent-secondary);
+  }
+
+  .quote-text {
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    color: var(--color-gray-800);
+    line-height: 1.6;
+    margin: 0 0 var(--spacing-md) 0;
+  }
+
+  .quote-footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .quote-author {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    font-style: normal;
+    color: var(--color-gray-900);
+  }
+
+  .quote-role {
+    font-weight: 400;
+    color: var(--color-gray-600);
+  }
+
+  .quote-source {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+  }
+
+  .quote-callout--primary .quote-author {
+    color: var(--color-primary);
+  }
+
+  .quote-callout--accent .quote-author {
+    color: var(--color-accent-dark);
+  }
+
+  .quote-callout--secondary .quote-author {
+    color: var(--color-accent-secondary);
+  }
+</style>

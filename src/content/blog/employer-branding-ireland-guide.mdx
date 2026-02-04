@@ -13,6 +13,9 @@ import PieChart from '../../components/charts/PieChart.astro';
 import ProcessFlow from '../../components/charts/ProcessFlow.astro';
 import Callout from '../../components/charts/Callout.astro';
 import FaqSchema from '../../components/FaqSchema.astro';
+import DonutChart from '../../components/charts/DonutChart.astro';
+import ComparisonChart from '../../components/charts/ComparisonChart.astro';
+import QuoteCallout from '../../components/charts/QuoteCallout.astro';
 
 <FaqSchema faqs={[
   {
@@ -99,10 +102,13 @@ According to [CareerBuilder research](https://www.zippia.com/advice/average-cost
 [Toggl Hire's 2025 report](https://toggl.com/hire/true-cost-of-a-bad-hire) breaks down the true costs: 48% of businesses spend between USD 5,000 and USD 10,000 in direct costs per hire (recruiting, interviewing, job ads). But the indirect costs of a bad hire, including lost productivity, team disruption, and rehiring expenses, can add another USD 30,000 to USD 150,000.
 
 <ChartContainer title="Employers Who Have Made a Bad Hire">
-  <PieChart segments={[
-    { value: "74%", label: "Have Made Bad Hire" },
-    { value: "26%", label: "Have Not" }
-  ]} />
+  <DonutChart
+    percentage={74}
+    centerValue="74%"
+    centerLabel="Have Made Bad Hire"
+    color="accent"
+    size="md"
+  />
 </ChartContainer>
 
 The problem is widespread. According to CareerBuilder, 74% of employers admit they have made a bad hire at some point. An average of 23% of companies report up to five bad hires per year, representing potential losses reaching close to millions of dollars.
@@ -154,10 +160,13 @@ Your employer brand must authentically communicate your approach to flexibility,
 Candidates are thorough researchers, and their research happens before you ever see their application.
 
 <ChartContainer title="Candidates Who Research Before Applying">
-  <PieChart segments={[
-    { value: "83%", label: "Research Reviews/Ratings" },
-    { value: "17%", label: "Apply Without Research" }
-  ]} />
+  <DonutChart
+    percentage={83}
+    centerValue="83%"
+    centerLabel="Research First"
+    color="primary"
+    size="md"
+  />
 </ChartContainer>
 
 According to [Apollo Technical's employer branding research](https://www.apollotechnical.com/employer-branding-statistics/), 83% of job seekers research a company's reviews and ratings before deciding where to apply. [Glassdoor data](https://dsmn8.com/blog/employer-branding-statistics/) shows that 87% of job seekers will not apply if they see negative reviews about the company.
@@ -217,7 +226,15 @@ Building an effective employer brand requires strategic thinking and consistent 
 
 **Audit your digital presence:** Google your company name plus "reviews" or "glassdoor" and see what candidates see. Address negative reviews professionally. Update stale career pages. Ensure your LinkedIn company page reflects current reality.
 
-**Activate employee advocacy:** According to [LinkedIn research](https://www.linkedin.com/pulse/why-employer-branding-matters-2025-building-magnetic-organisation-q8hbf), candidates trust the company's employees 3x more than the company itself to provide reliable information on what it is like to work there. Companies with employees sharing quality content are 58% more likely to attract talent. Employee posts get 2x more engagement than corporate posts.
+**Activate employee advocacy:** Your employees are your most credible ambassadors.
+
+<QuoteCallout
+  quote="Candidates trust the company's employees 3x more than the company itself to provide reliable information on what it is like to work there."
+  source="LinkedIn Research"
+  color="accent"
+/>
+
+Companies with employees sharing quality content are 58% more likely to attract talent. Employee posts get 2x more engagement than corporate posts.
 
 **Fix your application process:** Reduce friction ruthlessly. Aim for mobile-first, under 15 minutes, and clear communication at every stage. Test your own application process regularly.
 

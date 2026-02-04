@@ -15,6 +15,8 @@ import ProcessFlow from '../../components/charts/ProcessFlow.astro';
 import MetricBars from '../../components/charts/MetricBars.astro';
 import Callout from '../../components/charts/Callout.astro';
 import FaqSchema from '../../components/FaqSchema.astro';
+import ComparisonChart from '../../components/charts/ComparisonChart.astro';
+import QuoteCallout from '../../components/charts/QuoteCallout.astro';
 
 <FaqSchema faqs={[
   {
@@ -98,6 +100,18 @@ Research published in [Harvard Business Review](https://hbr.org/2016/03/a-bad-re
   ]} />
 </ChartContainer>
 
+<ChartContainer title="Key Metrics: Before vs After Employer Branding">
+  <ComparisonChart
+    items={[
+      { label: "Cost Per Hire", before: "$4,700", after: "$2,350" },
+      { label: "Time to Fill", before: "41 days", after: "20 days" },
+      { label: "Offer Acceptance", before: "65%", after: "90%" }
+    ]}
+    beforeLabel="Weak Brand"
+    afterLabel="Strong Brand"
+  />
+</ChartContainer>
+
 The hidden multiplier effects go further. A weak brand means fewer inbound applications, which forces greater reliance on recruitment agencies charging [15 to 25% of annual salary](https://engagedly.com/blog/average-cost-per-hire-employee/) per placement. It means longer time to fill, with every vacant day costing an estimated [$500 to $1,000 in lost productivity](https://www.vouchfor.com/blog/proving-employer-branding-roi). It means lower offer acceptance rates, wasting the entire cost of sourcing and interviewing candidates who ultimately decline. And it means higher first-year turnover, restarting the cycle with replacement costs that can reach [1.5 to 2 times the role's annual salary](https://workwolf.com/blog/2024-hiring-stats-every-employer-needs-to-know/).
 
 Contrast this with the data on strong employer brands. [LinkedIn's research](https://business.linkedin.com/content/dam/business/talent-solutions/global/en_us/c/pdfs/ultimate-list-of-employer-brand-stats.pdf) shows a 43% decrease in cost per hire, a 50% increase in qualified applicants, and a 28% reduction in first-year turnover. [Glassdoor data](https://www.glassdoor.com/employers/resources/hr-and-recruiting-stats/) supports this further, showing that companies investing actively in their employer brand can reduce turnover by as much as 28%.
@@ -163,7 +177,15 @@ It starts with an employer brand audit, moves to EVP development, then activates
 
 **Step 3: Optimise your career site for conversion.** Your career site is where brand perception converts into applications. [CareerPlug's data](https://www.polymer.co/blog/employer-branding-steps) shows careers pages account for only 13% of applications but yield 26% of hires, meaning candidates who apply through your site are four times more likely to be hired than those from job boards. Invest in authentic employee stories, clear role descriptions, and a frictionless application process. For practical tools to identify where candidates drop off, see our guide on [improving candidate experience with free tools](/blog/improve-candidate-experience-free-tools).
 
-**Step 4: Launch an employee advocacy programme.** Your employees' networks are your most credible and cost-effective recruitment channel. [Content shared by employees receives eight times more engagement](https://www.tribalimpact.com/blog/compelling-employee-advocacy-statistics) than content shared through brand channels. Ericsson's employee advocacy programme is the gold standard here. After launching a comprehensive employer branding initiative (including social advocacy, employee referral programmes, and careers blog), Ericsson [cut cost per hire by 70%](https://www.humanresourcesonline.net/case-study-reduce-cost-per-hire-70-heres-ericsson) while increasing employee referral hires from 13% to 35%.
+**Step 4: Launch an employee advocacy programme.** Your employees' networks are your most credible and cost-effective recruitment channel. [Content shared by employees receives eight times more engagement](https://www.tribalimpact.com/blog/compelling-employee-advocacy-statistics) than content shared through brand channels.
+
+<QuoteCallout
+  quote="Ericsson cut cost per hire by 70% while increasing employee referral hires from 13% to 35% through their comprehensive employer branding initiative."
+  source="Human Resources Online Case Study"
+  color="accent"
+/>
+
+Ericsson's employee advocacy programme is the gold standard here. After launching a comprehensive employer branding initiative (including social advocacy, employee referral programmes, and careers blog), they achieved these results.
 
 **Step 5: Create ongoing recruitment marketing content.** Employer branding is not a one-off project. It requires consistent content that reinforces your EVP across channels: social media, your blog, email nurture sequences, and event presence. Treat recruitment marketing the way you treat customer marketing, with a content calendar, performance tracking, and continuous optimisation.
 

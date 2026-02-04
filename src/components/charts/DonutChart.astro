@@ -1,0 +1,120 @@
+---
+interface Props {
+  percentage: number;
+  centerValue?: string;
+  centerLabel?: string;
+  color?: 'primary' | 'accent' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
+}
+
+const {
+  percentage,
+  centerValue,
+  centerLabel,
+  color = 'primary',
+  size = 'md'
+} = Astro.props;
+
+const circumference = 2 * Math.PI * 45;
+const strokeDashoffset = circumference - (percentage / 100) * circumference;
+
+const sizeMap = {
+  sm: 120,
+  md: 180,
+  lg: 240
+};
+
+const chartSize = sizeMap[size];
+---
+
+<div class={`donut-chart donut-chart--${size} donut-chart--${color}`}>
+  <svg viewBox="0 0 100 100" width={chartSize} height={chartSize}>
+    <circle
+      class="donut-track"
+      cx="50"
+      cy="50"
+      r="45"
+      fill="none"
+      stroke-width="8"
+    />
+    <circle
+      class="donut-fill"
+      cx="50"
+      cy="50"
+      r="45"
+      fill="none"
+      stroke-width="8"
+      stroke-dasharray={circumference}
+      stroke-dashoffset={strokeDashoffset}
+      transform="rotate(-90 50 50)"
+    />
+  </svg>
+  <div class="donut-center">
+    <span class="donut-value">{centerValue || `${percentage}%`}</span>
+    {centerLabel && <span class="donut-label">{centerLabel}</span>}
+  </div>
+</div>
+
+<style>
+  .donut-chart {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .donut-track {
+    stroke: var(--color-gray-200);
+  }
+
+  .donut-fill {
+    stroke: var(--color-primary);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+  }
+
+  .donut-chart--accent .donut-fill {
+    stroke: var(--color-accent);
+  }
+
+  .donut-chart--secondary .donut-fill {
+    stroke: var(--color-accent-secondary);
+  }
+
+  .donut-center {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .donut-value {
+    font-weight: 700;
+    color: var(--color-gray-900);
+  }
+
+  .donut-chart--sm .donut-value {
+    font-size: var(--font-size-xl);
+  }
+
+  .donut-chart--md .donut-value {
+    font-size: var(--font-size-3xl);
+  }
+
+  .donut-chart--lg .donut-value {
+    font-size: var(--font-size-4xl);
+  }
+
+  .donut-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    margin-top: var(--spacing-xs);
+    max-width: 80%;
+  }
+
+  .donut-chart--sm .donut-label {
+    font-size: var(--font-size-xs);
+  }
+</style>

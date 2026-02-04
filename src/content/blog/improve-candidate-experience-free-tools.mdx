@@ -16,6 +16,8 @@ import ComparisonCard from '../../components/charts/ComparisonCard.astro';
 import MetricBars from '../../components/charts/MetricBars.astro';
 import Callout from '../../components/charts/Callout.astro';
 import FaqSchema from '../../components/FaqSchema.astro';
+import DonutChart from '../../components/charts/DonutChart.astro';
+import TimelineChart from '../../components/charts/TimelineChart.astro';
 
 <FaqSchema faqs={[
   {
@@ -127,11 +129,13 @@ For recruitment teams, Clarity's value is immediate and practical:
 **Rage Clicks**: When candidates click repeatedly on something that does not respond, Clarity flags it as a rage click. This is often a broken link, a non-clickable element that looks clickable, or a form that is not working properly. These are high-priority fixes because they represent moments of candidate frustration.
 
 <ChartContainer title="Where Candidates Apply From">
-  <PieChart segments={[
-    { value: "70%", label: "Mobile" },
-    { value: "25%", label: "Desktop" },
-    { value: "5%", label: "Tablet" }
-  ]} />
+  <DonutChart
+    percentage={70}
+    centerValue="70%"
+    centerLabel="Apply on Mobile"
+    color="accent"
+    size="md"
+  />
 </ChartContainer>
 
 Clarity is also GDPR compliant and does not collect personally identifiable information by default. For Irish and European companies concerned about data protection, this makes implementation straightforward.
@@ -141,12 +145,15 @@ Clarity is also GDPR compliant and does not collect personally identifiable info
 Google Analytics 4 is free and provides quantitative data about your recruitment funnel. While Clarity shows qualitative behaviour, GA4 gives you the numbers: how many visitors, where they come from, and what percentage complete key actions.
 
 <ChartContainer title="GA4 Recruitment Funnel Setup">
-  <ProcessFlow steps={[
-    { number: 1, label: "Add GA4 Code", description: "Install tracking on careers site" },
-    { number: 2, label: "Set Up Goals", description: "Define conversion events" },
-    { number: 3, label: "Create Funnel", description: "Map application stages" },
-    { number: 4, label: "Analyse Drop-off", description: "Identify problem areas" }
-  ]} />
+  <TimelineChart
+    steps={[
+      { title: "Add GA4 Code", description: "Install tracking on careers site" },
+      { title: "Set Up Goals", description: "Define conversion events" },
+      { title: "Create Funnel", description: "Map application stages" },
+      { title: "Analyse Drop-off", description: "Identify problem areas" }
+    ]}
+    color="primary"
+  />
 </ChartContainer>
 
 According to [Workology's guide to GA4 for recruitment](https://workology.com/google-analytics-career-site/), you can use Google Analytics to set up cross-domain tracking between your ATS, career site, and CRM. This gives you full visibility from initial candidate entry to completed application, allowing you to understand candidate behaviours and optimise your recruitment marketing funnel.

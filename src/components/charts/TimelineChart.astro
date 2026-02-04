@@ -1,0 +1,145 @@
+---
+interface Step {
+  title: string;
+  description?: string;
+  duration?: string;
+}
+
+interface Props {
+  steps: Step[];
+  color?: 'primary' | 'accent' | 'secondary';
+}
+
+const { steps, color = 'accent' } = Astro.props;
+---
+
+<div class={`timeline-chart timeline-chart--${color}`}>
+  {steps.map((step, index) => (
+    <div class="timeline-step">
+      <div class="timeline-marker">
+        <span class="timeline-number">{index + 1}</span>
+      </div>
+      <div class="timeline-content">
+        <h4 class="timeline-title">{step.title}</h4>
+        {step.description && <p class="timeline-description">{step.description}</p>}
+        {step.duration && <span class="timeline-duration">{step.duration}</span>}
+      </div>
+    </div>
+  ))}
+</div>
+
+<style>
+  .timeline-chart {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    position: relative;
+    padding-left: var(--spacing-xl);
+  }
+
+  .timeline-chart::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--color-gray-200);
+  }
+
+  .timeline-step {
+    display: flex;
+    gap: var(--spacing-md);
+    position: relative;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: calc(-1 * var(--spacing-xl));
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .timeline-chart--primary .timeline-marker {
+    background-color: var(--color-primary);
+  }
+
+  .timeline-chart--secondary .timeline-marker {
+    background-color: var(--color-accent-secondary);
+  }
+
+  .timeline-number {
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  .timeline-content {
+    flex: 1;
+    padding: var(--spacing-md);
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-accent);
+  }
+
+  .timeline-chart--primary .timeline-content {
+    border-left-color: var(--color-primary);
+  }
+
+  .timeline-chart--secondary .timeline-content {
+    border-left-color: var(--color-accent-secondary);
+  }
+
+  .timeline-title {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-gray-900);
+    margin: 0 0 var(--spacing-xs) 0;
+  }
+
+  .timeline-description {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .timeline-duration {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--color-accent);
+    background-color: rgba(42, 157, 143, 0.1);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+  }
+
+  .timeline-chart--primary .timeline-duration {
+    color: var(--color-primary);
+    background-color: rgba(29, 53, 87, 0.1);
+  }
+
+  .timeline-chart--secondary .timeline-duration {
+    color: var(--color-accent-secondary);
+    background-color: rgba(99, 102, 241, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .timeline-chart {
+      padding-left: var(--spacing-lg);
+    }
+
+    .timeline-marker {
+      width: 28px;
+      height: 28px;
+      left: calc(-1 * var(--spacing-lg) - 6px);
+    }
+  }
+</style>

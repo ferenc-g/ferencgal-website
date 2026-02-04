@@ -1,0 +1,147 @@
+---
+interface Props {
+  percentage: number;
+  label?: string;
+  color?: 'primary' | 'accent' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
+  strokeWidth?: number;
+}
+
+const {
+  percentage,
+  label,
+  color = 'accent',
+  size = 'md',
+  strokeWidth = 6
+} = Astro.props;
+
+const sizeMap = {
+  sm: 64,
+  md: 96,
+  lg: 128
+};
+
+const chartSize = sizeMap[size];
+const radius = (chartSize - strokeWidth) / 2;
+const circumference = 2 * Math.PI * radius;
+const strokeDashoffset = circumference - (percentage / 100) * circumference;
+const center = chartSize / 2;
+---
+
+<div class={`progress-ring progress-ring--${size} progress-ring--${color}`}>
+  <svg width={chartSize} height={chartSize} viewBox={`0 0 ${chartSize} ${chartSize}`}>
+    <circle
+      class="progress-track"
+      cx={center}
+      cy={center}
+      r={radius}
+      fill="none"
+      stroke-width={strokeWidth}
+    />
+    <circle
+      class="progress-fill"
+      cx={center}
+      cy={center}
+      r={radius}
+      fill="none"
+      stroke-width={strokeWidth}
+      stroke-dasharray={circumference}
+      stroke-dashoffset={strokeDashoffset}
+      transform={`rotate(-90 ${center} ${center})`}
+    />
+  </svg>
+  <div class="progress-center">
+    <span class="progress-value">{percentage}%</span>
+  </div>
+  {label && <span class="progress-label">{label}</span>}
+</div>
+
+<style>
+  .progress-ring {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    position: relative;
+  }
+
+  .progress-ring svg {
+    display: block;
+  }
+
+  .progress-track {
+    stroke: var(--color-gray-200);
+  }
+
+  .progress-fill {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+  }
+
+  .progress-ring--primary .progress-fill {
+    stroke: var(--color-primary);
+  }
+
+  .progress-ring--accent .progress-fill {
+    stroke: var(--color-accent);
+  }
+
+  .progress-ring--secondary .progress-fill {
+    stroke: var(--color-accent-secondary);
+  }
+
+  .progress-center {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .progress-ring--sm .progress-center {
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 64px;
+  }
+
+  .progress-ring--md .progress-center {
+    top: 0;
+    left: 0;
+    width: 96px;
+    height: 96px;
+  }
+
+  .progress-ring--lg .progress-center {
+    top: 0;
+    left: 0;
+    width: 128px;
+    height: 128px;
+  }
+
+  .progress-value {
+    font-weight: 700;
+    color: var(--color-gray-900);
+  }
+
+  .progress-ring--sm .progress-value {
+    font-size: var(--font-size-sm);
+  }
+
+  .progress-ring--md .progress-value {
+    font-size: var(--font-size-lg);
+  }
+
+  .progress-ring--lg .progress-value {
+    font-size: var(--font-size-2xl);
+  }
+
+  .progress-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    text-align: center;
+  }
+
+  .progress-ring--sm .progress-label {
+    font-size: var(--font-size-xs);
+  }
+</style>

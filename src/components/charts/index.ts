@@ -9,3 +9,13 @@ export { default as PieChart } from './PieChart.astro';
 export { default as MetricBars } from './MetricBars.astro';
 export { default as Callout } from './Callout.astro';
 export { default as ComparisonCard } from './ComparisonCard.astro';
+
+// Additional chart components
+export { default as DonutChart } from './DonutChart.astro';
+export { default as ComparisonChart } from './ComparisonChart.astro';
+export { default as TimelineChart } from './TimelineChart.astro';
+export { default as StatCard } from './StatCard.astro';
+export { default as StackedBarChart } from './StackedBarChart.astro';
+export { default as ProgressRing } from './ProgressRing.astro';
+export { default as IconStatGrid } from './IconStatGrid.astro';
+export { default as QuoteCallout } from './QuoteCallout.astro';

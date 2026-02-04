@@ -15,6 +15,8 @@ import ComparisonTable from '../../components/charts/ComparisonTable.astro';
 import MetricBars from '../../components/charts/MetricBars.astro';
 import Callout from '../../components/charts/Callout.astro';
 import FaqSchema from '../../components/FaqSchema.astro';
+import DonutChart from '../../components/charts/DonutChart.astro';
+import TimelineChart from '../../components/charts/TimelineChart.astro';
 
 <FaqSchema faqs={[
   {
@@ -74,10 +76,13 @@ In Ireland, the challenge is even more acute. [ManpowerGroup's 2025 Talent Short
 A passive candidate is someone who is currently employed and not actively searching for a new job, but who might consider a compelling opportunity if approached the right way. Unlike active candidates who apply to job postings and attend career fairs, passive candidates need to be found, engaged, and convinced that changing roles is worth the risk.
 
 <ChartContainer title="Active vs Passive Candidates">
-  <PieChart segments={[
-    { value: "70%", label: "Passive Candidates" },
-    { value: "30%", label: "Active Job Seekers" }
-  ]} />
+  <DonutChart
+    percentage={70}
+    centerValue="70%"
+    centerLabel="Are Passive"
+    color="primary"
+    size="md"
+  />
 </ChartContainer>
 
 The distinction matters because passive and active candidates require fundamentally different recruitment approaches. Active candidates come to you through job boards and career sites. They are motivated to move quickly and often comparing multiple offers. Passive candidates must be sourced proactively through networking, referrals, and targeted outreach. They move more slowly and need more convincing, but they often represent higher quality hires.
@@ -196,12 +201,15 @@ The passive candidate connection is direct: your employees know talented people 
 Most passive candidates will not be ready to move when you first contact them. They may be mid-project, recently promoted, or simply not feeling the timing is right. Effective passive recruiting requires building relationships over months or years, staying top of mind until the moment they become open to change.
 
 <ChartContainer title="Passive Candidate Nurture Sequence">
-  <ProcessFlow steps={[
-    { number: 1, label: "Initial Outreach", description: "Personalised, no pressure" },
-    { number: 2, label: "Share Value", description: "Industry insights, content" },
-    { number: 3, label: "Check In", description: "Quarterly touchpoints" },
-    { number: 4, label: "Convert", description: "When timing aligns" }
-  ]} />
+  <TimelineChart
+    steps={[
+      { title: "Initial Outreach", description: "Personalised, no pressure", duration: "Day 1" },
+      { title: "Share Value", description: "Industry insights, content", duration: "Ongoing" },
+      { title: "Check In", description: "Quarterly touchpoints", duration: "3-6 months" },
+      { title: "Convert", description: "When timing aligns", duration: "When ready" }
+    ]}
+    color="accent"
+  />
 </ChartContainer>
 
 The nurture approach treats passive candidates as long-term relationships rather than immediate transactions. After initial contact, continue providing value through industry insights, relevant content, and genuine professional engagement. Comment on their LinkedIn posts. Share articles related to their interests. Congratulate them on work anniversaries and achievements.

@@ -1,0 +1,137 @@
+---
+interface BarSegment {
+  value: number;
+  label: string;
+  color?: 'primary' | 'accent' | 'secondary' | 'gray';
+}
+
+interface Props {
+  segments: BarSegment[];
+  showLegend?: boolean;
+  height?: 'sm' | 'md' | 'lg';
+}
+
+const { segments, showLegend = true, height = 'md' } = Astro.props;
+
+const total = segments.reduce((sum, seg) => sum + seg.value, 0);
+const segmentsWithPercent = segments.map(seg => ({
+  ...seg,
+  percent: total > 0 ? (seg.value / total) * 100 : 0
+}));
+---
+
+<div class={`stacked-bar stacked-bar--${height}`}>
+  <div class="stacked-bar-track">
+    {segmentsWithPercent.map((segment) => (
+      <div
+        class={`stacked-bar-segment stacked-bar-segment--${segment.color || 'primary'}`}
+        style={`width: ${segment.percent}%`}
+        title={`${segment.label}: ${segment.value}`}
+      />
+    ))}
+  </div>
+  {showLegend && (
+    <div class="stacked-bar-legend">
+      {segmentsWithPercent.map((segment) => (
+        <div class="legend-item">
+          <span class={`legend-dot legend-dot--${segment.color || 'primary'}`} />
+          <span class="legend-label">{segment.label}</span>
+          <span class="legend-value">{segment.value} ({segment.percent.toFixed(0)}%)</span>
+        </div>
+      ))}
+    </div>
+  )}
+</div>
+
+<style>
+  .stacked-bar {
+    width: 100%;
+  }
+
+  .stacked-bar-track {
+    display: flex;
+    width: 100%;
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    background-color: var(--color-gray-200);
+  }
+
+  .stacked-bar--sm .stacked-bar-track {
+    height: 8px;
+  }
+
+  .stacked-bar--md .stacked-bar-track {
+    height: 16px;
+  }
+
+  .stacked-bar--lg .stacked-bar-track {
+    height: 24px;
+  }
+
+  .stacked-bar-segment {
+    transition: width 0.5s ease;
+  }
+
+  .stacked-bar-segment--primary {
+    background-color: var(--color-primary);
+  }
+
+  .stacked-bar-segment--accent {
+    background-color: var(--color-accent);
+  }
+
+  .stacked-bar-segment--secondary {
+    background-color: var(--color-accent-secondary);
+  }
+
+  .stacked-bar-segment--gray {
+    background-color: var(--color-gray-400);
+  }
+
+  .stacked-bar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+  }
+
+  .legend-dot--primary {
+    background-color: var(--color-primary);
+  }
+
+  .legend-dot--accent {
+    background-color: var(--color-accent);
+  }
+
+  .legend-dot--secondary {
+    background-color: var(--color-accent-secondary);
+  }
+
+  .legend-dot--gray {
+    background-color: var(--color-gray-400);
+  }
+
+  .legend-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-700);
+  }
+
+  .legend-value {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-gray-900);
+  }
+</style>
