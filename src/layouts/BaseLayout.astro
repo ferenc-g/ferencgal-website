@@ -104,17 +104,25 @@ const fullCanonical = canonical.startsWith('http') ? canonical : `https://ferenc
             <a href="/" class="nav-logo">Ferenc Gal</a>
             <ul class="nav-links">
                 <li><a href="/#about">About</a></li>
-                <li class="nav-dropdown">
+                <li class="nav-dropdown nav-mega">
                     <a href="/#services" class="nav-dropdown-trigger">Services</a>
-                    <ul class="nav-dropdown-menu">
-                        <li><a href="/services/recruitment-marketing-audit">Recruitment Marketing Audit</a></li>
-                        <li><a href="/services/recruitment-marketing-strategy">Recruitment Marketing Strategy</a></li>
-                        <li><a href="/services/outsourced-recruitment-marketing">Outsourced Recruitment Marketing</a></li>
-                        <li><a href="/services/evp-development">EVP Development</a></li>
-                        <li><a href="/services/employer-brand-activation">Employer Brand Activation</a></li>
-                        <li class="nav-dropdown-divider"></li>
-                        <li><a href="/#services">View All Services</a></li>
-                    </ul>
+                    <div class="nav-mega-menu">
+                        <div class="nav-mega-column">
+                            <span class="nav-mega-header">Recruitment Marketing</span>
+                            <a href="/services/recruitment-marketing-audit">Recruitment Marketing Audit</a>
+                            <a href="/services/recruitment-marketing-strategy">Recruitment Marketing Strategy</a>
+                            <a href="/services/outsourced-recruitment-marketing">Outsourced Recruitment Marketing</a>
+                            <a href="/services/market-research">Market Research & Tracking</a>
+                            <a href="/services/pilots-poc">Pilots & Proof of Concepts</a>
+                            <a href="/services/recruitment-technology">Recruitment Technology</a>
+                        </div>
+                        <div class="nav-mega-column nav-mega-column--eb">
+                            <span class="nav-mega-header nav-mega-header--eb">Employer Branding</span>
+                            <a href="/services/employer-brand-assessment">Employer Brand Assessment</a>
+                            <a href="/services/evp-development">EVP Development</a>
+                            <a href="/services/employer-brand-activation">Employer Brand Activation</a>
+                        </div>
+                    </div>
                 </li>
                 <li><a href="/#results">Results</a></li>
                 <li><a href="/#speaking">Speaking</a></li>

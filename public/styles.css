@@ -371,6 +371,71 @@ p {
     margin: var(--spacing-xs) 0;
 }
 
+/* Mega Menu */
+.nav-mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    min-width: 520px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-gray-200);
+    padding: var(--spacing-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+    margin-top: var(--spacing-sm);
+}
+
+.nav-mega:hover .nav-mega-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-mega-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.nav-mega-header {
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    padding-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-accent);
+}
+
+.nav-mega-header--eb {
+    color: var(--color-accent-secondary);
+    border-bottom-color: var(--color-accent-secondary);
+}
+
+.nav-mega-column a {
+    padding: var(--spacing-xs) 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+}
+
+.nav-mega-column a:hover {
+    color: var(--color-primary);
+    padding-left: var(--spacing-xs);
+}
+
+.nav-mega-column--eb a:hover {
+    color: var(--color-accent-secondary);
+}
+
 /* ==========================================================================
    Hero Section
    ========================================================================== */
@@ -1574,6 +1639,41 @@ p {
     .nav-dropdown-menu a {
         padding: var(--spacing-xs) var(--spacing-md);
         font-size: var(--font-size-sm);
+    }
+
+    /* Mobile mega menu styles */
+    .nav-mega-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        grid-template-columns: 1fr;
+        min-width: auto;
+        box-shadow: none;
+        border: none;
+        background-color: var(--color-gray-50);
+        border-radius: var(--radius-sm);
+        margin: var(--spacing-xs) 0;
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+    }
+
+    .nav-mega-column {
+        gap: 0;
+    }
+
+    .nav-mega-header {
+        font-size: var(--font-size-xs);
+        padding-bottom: var(--spacing-xs);
+    }
+
+    .nav-mega-column a {
+        padding: var(--spacing-xs) 0;
+        font-size: var(--font-size-sm);
+    }
+
+    .nav-mega-column a:hover {
+        padding-left: 0;
     }
 
     .nav-toggle.active span:nth-child(1) {
