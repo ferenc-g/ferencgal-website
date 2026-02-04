@@ -15,6 +15,42 @@ import ProcessFlow from '../../components/charts/ProcessFlow.astro';
 import ComparisonCard from '../../components/charts/ComparisonCard.astro';
 import MetricBars from '../../components/charts/MetricBars.astro';
 import Callout from '../../components/charts/Callout.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
+
+<FaqSchema faqs={[
+  {
+    question: "Why does candidate experience matter more than ever?",
+    answer: "A positive candidate experience makes candidates 38% more likely to accept job offers. 87% of job seekers will not apply to companies with negative reviews. Poor experience increases cost-per-hire and damages employer brand."
+  },
+  {
+    question: "What is causing candidates to abandon your application?",
+    answer: "60% abandon due to complexity. 73% quit if applications take longer than 15 minutes. 70% apply on mobile but most career sites are not mobile-optimised. 40% abandon non-mobile-friendly applications."
+  },
+  {
+    question: "How can Microsoft Clarity help you understand candidate behaviour?",
+    answer: "Microsoft Clarity is completely free with unlimited session recordings, heatmaps, and rage click detection. It shows exactly where candidates hesitate, scroll back up, or abandon. GDPR compliant by default."
+  },
+  {
+    question: "What can Google Analytics 4 tell you about your careers site?",
+    answer: "GA4 provides quantitative data: traffic sources, conversion funnels by application stage, device usage (mobile vs desktop), and page performance. It helps identify which channels deliver the most qualified applicants."
+  },
+  {
+    question: "How does Hotjar complement Clarity and GA4?",
+    answer: "Hotjar offers similar heatmaps and recordings but adds built-in feedback widgets and surveys. The free plan includes 1,050 sessions monthly. You can trigger surveys for candidates who abandon mid-application."
+  },
+  {
+    question: "What does a complete free analytics stack look like?",
+    answer: "Layer 1: GA4 for quantitative traffic data. Layer 2: Clarity or Hotjar for qualitative behaviour. Layer 3: Google Forms for direct feedback. Layer 4: Tawk.to or Tidio for real-time engagement."
+  },
+  {
+    question: "What quick wins can you implement this week?",
+    answer: "Shorten applications (75% prefer one-click apply). Add mobile apply support. Set up automated emails at each stage (65% report poor communication). Acknowledge applications within 24 hours."
+  },
+  {
+    question: "How do you measure success after implementing these tools?",
+    answer: "Track application completion rate (target 20%+), mobile completion rate (target 15%+), candidate satisfaction NPS (target 50+), offer acceptance rate, and cost-per-hire reduction."
+  }
+]} />
 
 For every 100 candidates who click "Apply" on your job posting, only 8 actually complete the process. That 92% drop-off rate is not a technology problem. It is a visibility problem. Most companies have no idea where candidates abandon their application, what frustrates them, or why they never hit submit.
 

@@ -14,6 +14,34 @@ import FunnelChart from '../../components/charts/FunnelChart.astro';
 import ProcessFlow from '../../components/charts/ProcessFlow.astro';
 import MetricBars from '../../components/charts/MetricBars.astro';
 import Callout from '../../components/charts/Callout.astro';
+import FaqSchema from '../../components/FaqSchema.astro';
+
+<FaqSchema faqs={[
+  {
+    question: "What is cost per hire and why does it keep rising?",
+    answer: "Cost per hire is total recruitment costs divided by number of hires. The average in the US is $4,700 (SHRM), up 14% since 2019. In the UK, CIPD puts it at £6,125. It rises due to talent competition, job board pricing, and agency fees."
+  },
+  {
+    question: "How much does a weak employer brand actually cost you?",
+    answer: "Companies with weak employer brands pay up to 10% more in salaries and spend nearly double per hire. Harvard Business Review found this salary premium alone could cost a company of 10,000 employees up to $7.6 million per year."
+  },
+  {
+    question: "What are the biggest cost-per-hire drivers you can actually control?",
+    answer: "The three controllable drivers are sourcing channel mix, candidate pipeline quality, and hiring process efficiency. Job board postings cost $500-$2,000 monthly. Agency fees run 15-25% of annual salary."
+  },
+  {
+    question: "How does employer branding reduce cost per hire?",
+    answer: "Employer branding works through five mechanisms: organic candidate attraction (2x more applicants), higher referral rates (51% increase), faster time to fill, improved offer acceptance, and 28% lower turnover."
+  },
+  {
+    question: "What does an employer branding playbook look like in practice?",
+    answer: "A 5-step framework: audit current brand perception, define your EVP, optimise career site for conversion (4x hire rate vs job boards), launch employee advocacy (Ericsson cut CPH by 70%), and create ongoing recruitment content."
+  },
+  {
+    question: "How do you measure the ROI of employer branding on cost per hire?",
+    answer: "Track cost per hire by sourcing channel, inbound application volume, referral rate, offer acceptance rate, and first-year retention. A company hiring 100 people at £6,125 average saves £183,750-£263,375 annually with 30-43% reduction."
+  }
+]} />
 
 Most companies trying to reduce cost per hire start in the wrong place. They renegotiate job board contracts, pressure agencies on fees, or cut corners on candidate experience. These tactics might trim a few pounds off the next quarter's recruitment budget, but they rarely deliver lasting savings.
 
