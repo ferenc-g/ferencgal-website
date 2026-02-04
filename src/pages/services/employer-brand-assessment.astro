@@ -1,0 +1,475 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const title = "Employer Brand Assessment & Audit | Ferenc Gal";
+const description = "Comprehensive evaluation of your employer brand across internal and external touchpoints. Identify alignment gaps and strengthen your position as an employer of choice.";
+const keywords = "employer brand assessment, employer brand audit, EVP assessment, employer brand health, employer brand perception, employee value proposition audit";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an employer brand assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An employer brand assessment is a comprehensive evaluation of how your organisation is perceived as an employer by both internal (employees) and external (candidates) audiences. It identifies gaps between your intended employer brand and how it is actually experienced."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does an employer brand assessment differ from a recruitment marketing audit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A recruitment marketing audit focuses on channels, content, and tactical execution. An employer brand assessment goes deeper into perception, culture, and EVP alignment. It examines what you stand for as an employer and whether that resonates authentically with your audiences."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What research methods are used in an employer brand assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Methods include: employee surveys and focus groups, candidate perception research, stakeholder interviews, Glassdoor and review analysis, social listening, competitor benchmarking, and analysis of internal communications and culture artefacts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does an employer brand assessment take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A comprehensive assessment typically takes 6-8 weeks, including employee and candidate research, stakeholder interviews, data analysis, and report development. Simpler assessments focused on specific aspects can be completed in 3-4 weeks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should an organisation conduct an employer brand assessment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Key triggers include: before developing or refreshing your EVP, during mergers or acquisitions, when experiencing significant culture changes, before major hiring initiatives, when employee engagement or retention declines, or when external perception does not match internal reality."
+      }
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Employer Brand Assessment & Audit",
+  "description": "Comprehensive evaluation of your employer brand across internal and external touchpoints.",
+  "provider": {
+    "@type": "Person",
+    "name": "Ferenc Gal",
+    "url": "https://ferencgal.com"
+  },
+  "serviceType": "Employer Branding Consulting",
+  "areaServed": ["Ireland", "Europe"]
+};
+---
+
+<ServiceLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  serviceName="Employer Brand Assessment"
+  serviceCategory="Employer Branding"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </Fragment>
+
+  <Fragment slot="intro">
+    Comprehensive evaluation of your employer brand across internal and external touchpoints. Understand how you are perceived as an employer and identify opportunities to strengthen your position.
+  </Fragment>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Why Assess Your Employer Brand?</h2>
+      <p>Your employer brand exists whether you manage it or not. It lives in Glassdoor reviews, candidate conversations, and the stories your employees tell. Understanding this perception is the first step to influencing it.</p>
+      <p>Many organisations have a gap between their intended employer brand and how they are actually experienced. They invest in employer branding initiatives without understanding where they are starting from or what specific issues need addressing.</p>
+      <p>An assessment provides an objective baseline, identifies specific gaps and opportunities, and creates alignment among leadership about priorities. It ensures your employer brand investments address real issues rather than assumed ones.</p>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>What We Assess</h2>
+      <div class="assessment-areas">
+        <div class="assessment-area">
+          <h3>Internal Perception</h3>
+          <p>How employees experience and perceive your employer brand.</p>
+          <ul>
+            <li>Employee engagement survey analysis</li>
+            <li>Focus groups and interviews</li>
+            <li>Culture and values alignment</li>
+            <li>EVP attribute perception</li>
+            <li>Manager and leader perspectives</li>
+            <li>Onboarding experience</li>
+          </ul>
+        </div>
+        <div class="assessment-area">
+          <h3>External Perception</h3>
+          <p>How candidates and the talent market perceive you.</p>
+          <ul>
+            <li>Candidate perception research</li>
+            <li>Glassdoor and Indeed analysis</li>
+            <li>Social media sentiment</li>
+            <li>Media and press coverage</li>
+            <li>University and campus perception</li>
+            <li>Alumni networks</li>
+          </ul>
+        </div>
+        <div class="assessment-area">
+          <h3>Competitive Position</h3>
+          <p>How you compare to talent competitors.</p>
+          <ul>
+            <li>Competitor EVP analysis</li>
+            <li>Share of voice assessment</li>
+            <li>Differentiation opportunities</li>
+            <li>Talent flow patterns</li>
+            <li>Employer ranking positions</li>
+            <li>Compensation perception</li>
+          </ul>
+        </div>
+        <div class="assessment-area">
+          <h3>Brand Expression</h3>
+          <p>How your employer brand is communicated.</p>
+          <ul>
+            <li>Careers site content audit</li>
+            <li>Job advertisement review</li>
+            <li>Social content analysis</li>
+            <li>Employee advocacy assessment</li>
+            <li>Visual identity consistency</li>
+            <li>Messaging alignment</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>The Assessment Process</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Stakeholder Alignment</h3>
+            <p>We begin with leadership interviews to understand business context, hiring challenges, and strategic priorities. This shapes the assessment scope and ensures relevance.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Internal Research</h3>
+            <p>We gather employee perspectives through surveys, focus groups, and analysis of existing engagement data. This reveals the lived experience of your employer brand.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>External Research</h3>
+            <p>We assess external perception through candidate surveys, review analysis, social listening, and competitive benchmarking.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Gap Analysis</h3>
+            <p>We identify gaps between intended and perceived employer brand, between internal and external perception, and between you and your competitors.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Recommendations</h3>
+            <p>We deliver prioritised recommendations addressing gaps, building on strengths, and positioning you more effectively against competitors.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>What You Receive</h2>
+      <div class="deliverables">
+        <div class="deliverable">
+          <h3>Executive Summary</h3>
+          <p>Concise overview of key findings and priority recommendations for leadership.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Perception Map</h3>
+          <p>Visual representation of how different audiences perceive your employer brand attributes.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Gap Analysis</h3>
+          <p>Detailed analysis of gaps between intended brand, internal experience, and external perception.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Competitive Landscape</h3>
+          <p>Positioning analysis showing your employer brand relative to talent competitors.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Recommendations Roadmap</h3>
+          <p>Prioritised action plan with quick wins and strategic initiatives.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Stakeholder Workshop</h3>
+          <p>Interactive session to present findings and align leadership on next steps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Related Services</h2>
+      <p>Assessments often lead to these follow-on services:</p>
+      <div class="related-services">
+        <a href="/services/evp-development" class="related-service">
+          <h3>EVP Development</h3>
+          <p>Define or refresh your employer value proposition</p>
+        </a>
+        <a href="/services/employer-brand-activation" class="related-service">
+          <h3>Employer Brand Activation</h3>
+          <p>Bring your employer brand to life</p>
+        </a>
+        <a href="/services/market-research" class="related-service">
+          <h3>Market Research & Tracking</h3>
+          <p>Ongoing measurement of employer brand health</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What is an employer brand assessment?</h3>
+          <p>An employer brand assessment is a comprehensive evaluation of how your organisation is perceived as an employer by both internal (employees) and external (candidates) audiences. It identifies gaps between your intended employer brand and how it is actually experienced.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How does an employer brand assessment differ from a recruitment marketing audit?</h3>
+          <p>A recruitment marketing audit focuses on channels, content, and tactical execution. An employer brand assessment goes deeper into perception, culture, and EVP alignment. It examines what you stand for as an employer and whether that resonates authentically with your audiences.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What research methods are used in an employer brand assessment?</h3>
+          <p>Methods include: employee surveys and focus groups, candidate perception research, stakeholder interviews, Glassdoor and review analysis, social listening, competitor benchmarking, and analysis of internal communications and culture artefacts.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does an employer brand assessment take?</h3>
+          <p>A comprehensive assessment typically takes 6-8 weeks, including employee and candidate research, stakeholder interviews, data analysis, and report development. Simpler assessments focused on specific aspects can be completed in 3-4 weeks.</p>
+        </div>
+        <div class="faq-item">
+          <h3>When should an organisation conduct an employer brand assessment?</h3>
+          <p>Key triggers include: before developing or refreshing your EVP, during mergers or acquisitions, when experiencing significant culture changes, before major hiring initiatives, when employee engagement or retention declines, or when external perception does not match internal reality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
+
+<style>
+  .service-section {
+    padding: 4rem 0;
+  }
+
+  .service-section--alt {
+    background: #f8f9fa;
+  }
+
+  .service-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+  }
+
+  .service-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  .assessment-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .assessment-area {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .assessment-area h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .assessment-area > p {
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+    color: #666;
+  }
+
+  .assessment-area ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .assessment-area li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+    font-size: 0.875rem;
+  }
+
+  .assessment-area li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: bold;
+  }
+
+  .process-steps {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    background: #6366f1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  .step-content p {
+    margin: 0;
+    color: #555;
+  }
+
+  .deliverables {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .deliverable {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .deliverable h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .deliverable p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #555;
+  }
+
+  .related-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .related-service {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e8e8ed;
+  }
+
+  .related-service:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+
+  .related-service h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #6366f1;
+  }
+
+  .related-service p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .faq-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e8e8ed;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: 768px) {
+    .process-step {
+      grid-template-columns: 1fr;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  }
+</style>

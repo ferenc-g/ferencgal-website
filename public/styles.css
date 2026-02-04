@@ -300,6 +300,77 @@ p {
     transition: all var(--transition-fast);
 }
 
+/* Navigation Dropdown */
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-dropdown-trigger::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid currentColor;
+    transition: transform var(--transition-fast);
+}
+
+.nav-dropdown:hover .nav-dropdown-trigger::after {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 260px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-gray-200);
+    padding: var(--spacing-sm) 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-fast);
+    margin-top: var(--spacing-sm);
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-dropdown-menu li {
+    display: block;
+}
+
+.nav-dropdown-menu a {
+    display: block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.nav-dropdown-menu a:hover {
+    background-color: var(--color-gray-50);
+    color: var(--color-primary);
+}
+
+.nav-dropdown-divider {
+    height: 1px;
+    background-color: var(--color-gray-200);
+    margin: var(--spacing-xs) 0;
+}
+
 /* ==========================================================================
    Hero Section
    ========================================================================== */
@@ -644,6 +715,22 @@ p {
     transform: translateX(2px);
 }
 
+/* Service card as link */
+.service-card-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.service-card-link:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-left-color: var(--color-accent);
+}
+
+.services-grid--eb .service-card-link:hover {
+    border-left-color: var(--color-accent-secondary);
+}
+
 /* ==========================================================================
    Results Section
    ========================================================================== */
@@ -970,6 +1057,75 @@ p {
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
+}
+
+/* Contact CTA Section (homepage) */
+.contact-cta-section {
+    padding: var(--spacing-3xl) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-white);
+    text-align: center;
+}
+
+.contact-cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-cta-section .section-eyebrow {
+    color: var(--color-accent-light);
+}
+
+.contact-cta-section h2 {
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-cta-section p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-cta-section .contact-delivery {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left-color: var(--color-accent-light);
+    margin-bottom: var(--spacing-xl);
+}
+
+.contact-cta-section .contact-delivery a {
+    color: var(--color-accent-light);
+}
+
+.contact-cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-cta-section .btn-primary {
+    background-color: var(--color-accent);
+}
+
+.contact-cta-section .btn-primary:hover {
+    background-color: var(--color-accent-light);
+}
+
+.contact-cta-section .btn-secondary {
+    border-color: var(--color-white);
+    color: var(--color-white);
+    display: inline-flex;
+    align-items: center;
+}
+
+.contact-cta-section .btn-secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+.contact-cta-section .btn-secondary svg {
+    fill: currentColor;
 }
 
 /* ==========================================================================
@@ -1394,6 +1550,30 @@ p {
 
     .nav-toggle {
         display: flex;
+    }
+
+    /* Mobile dropdown styles */
+    .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        border: none;
+        background-color: var(--color-gray-50);
+        border-radius: var(--radius-sm);
+        margin: var(--spacing-xs) 0;
+        padding: var(--spacing-xs) 0;
+        min-width: auto;
+    }
+
+    .nav-dropdown-trigger::after {
+        display: none;
+    }
+
+    .nav-dropdown-menu a {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: var(--font-size-sm);
     }
 
     .nav-toggle.active span:nth-child(1) {

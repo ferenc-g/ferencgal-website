@@ -1,0 +1,488 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const title = "Recruitment Marketing Audit Services | Ferenc Gal";
+const description = "Comprehensive recruitment marketing audit to identify gaps and opportunities. Evaluate your careers site, job ads, social presence, and candidate journey.";
+const keywords = "recruitment marketing audit, talent acquisition audit, employer brand audit, careers site review, recruitment assessment, candidate journey mapping";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a recruitment marketing audit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A recruitment marketing audit is a comprehensive evaluation of your talent attraction efforts, including your careers site, job advertisements, social media presence, employer brand messaging, and candidate experience. It identifies gaps, benchmarks against competitors, and provides actionable recommendations for improvement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a recruitment marketing audit take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A typical recruitment marketing audit takes 3-4 weeks from kickoff to final report delivery. This includes stakeholder interviews, data gathering, competitor analysis, candidate journey mapping, and the development of prioritised recommendations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a recruitment marketing audit include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A comprehensive audit includes: careers site UX and content review, job advertisement analysis, social media footprint assessment, Glassdoor and Indeed presence evaluation, candidate journey mapping, competitor benchmarking, and a prioritised recommendations report with quick wins and strategic initiatives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a recruitment marketing audit cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Investment varies based on scope and organisation size. A focused audit for a single business unit typically starts from EUR 5,000, while enterprise-wide audits covering multiple geographies and business lines range from EUR 15,000-30,000. Contact us for a tailored quote."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who should conduct a recruitment marketing audit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Organisations should consider an audit when experiencing high cost-per-hire, low application volumes, poor quality candidates, high offer rejection rates, or when planning significant hiring initiatives. Companies undergoing employer brand refreshes or careers site redesigns also benefit from an objective baseline assessment."
+      }
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Recruitment Marketing Audit",
+  "description": "Comprehensive evaluation of your recruitment marketing efforts to identify gaps, opportunities, and actionable improvements.",
+  "provider": {
+    "@type": "Person",
+    "name": "Ferenc Gal",
+    "url": "https://ferencgal.com"
+  },
+  "serviceType": "Recruitment Marketing Consulting",
+  "areaServed": ["Ireland", "Europe"]
+};
+---
+
+<ServiceLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  serviceName="Recruitment Marketing Audit"
+  serviceCategory="Recruitment Marketing"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </Fragment>
+
+  <Fragment slot="intro">
+    A comprehensive evaluation of your recruitment marketing efforts, identifying gaps, benchmarking against competitors, and providing actionable recommendations to improve your talent attraction.
+  </Fragment>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>What is a Recruitment Marketing Audit?</h2>
+      <p>A recruitment marketing audit provides an objective, data-driven assessment of how effectively your organisation attracts talent. It examines every touchpoint where candidates interact with your employer brand, from initial awareness through to application and beyond.</p>
+      <p>The audit reveals disconnects between your intended employer brand and how candidates actually experience it. It identifies quick wins that can improve results immediately, alongside strategic opportunities that require longer-term investment.</p>
+      <p>Most organisations have blind spots in their recruitment marketing. Internal teams are too close to the process to see friction points that candidates encounter daily. An external audit brings fresh perspective and industry benchmarks that internal reviews simply cannot provide.</p>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>What Does the Audit Cover?</h2>
+      <div class="audit-areas">
+        <div class="audit-area">
+          <h3>Digital Presence Analysis</h3>
+          <ul>
+            <li>Careers site UX and content review</li>
+            <li>Mobile experience evaluation</li>
+            <li>Application process friction analysis</li>
+            <li>SEO performance for job-related searches</li>
+            <li>Social media footprint assessment</li>
+            <li>LinkedIn company page and life page review</li>
+          </ul>
+        </div>
+        <div class="audit-area">
+          <h3>Employer Brand Touchpoints</h3>
+          <ul>
+            <li>Glassdoor presence and review management</li>
+            <li>Indeed company page evaluation</li>
+            <li>Job advertisement messaging analysis</li>
+            <li>Employee advocacy assessment</li>
+            <li>Employer brand consistency check</li>
+            <li>Visual identity and tone of voice review</li>
+          </ul>
+        </div>
+        <div class="audit-area">
+          <h3>Candidate Journey Mapping</h3>
+          <ul>
+            <li>Awareness stage touchpoint analysis</li>
+            <li>Consideration stage content review</li>
+            <li>Application experience evaluation</li>
+            <li>Communication cadence assessment</li>
+            <li>Candidate feedback analysis</li>
+            <li>Drop-off point identification</li>
+          </ul>
+        </div>
+        <div class="audit-area">
+          <h3>Competitor Benchmarking</h3>
+          <ul>
+            <li>Competitor employer brand analysis</li>
+            <li>Talent competitor identification</li>
+            <li>EVP differentiation assessment</li>
+            <li>Content strategy comparison</li>
+            <li>Channel presence benchmarking</li>
+            <li>Best practice identification</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>The Audit Process</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Discovery and Briefing</h3>
+            <p>We begin with stakeholder interviews to understand your hiring challenges, target audiences, and business objectives. This shapes the audit scope and ensures findings are relevant to your specific context.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Data Gathering</h3>
+            <p>We collect quantitative data from your ATS, careers site analytics, and recruitment marketing platforms. This provides an objective baseline for measuring current performance.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Experience Audit</h3>
+            <p>We evaluate your candidate experience end-to-end, from initial search through application. This includes mobile testing, accessibility review, and friction point identification.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Competitive Analysis</h3>
+            <p>We benchmark your recruitment marketing against 5-8 talent competitors, identifying best practices and differentiation opportunities in your market.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Findings and Recommendations</h3>
+            <p>We deliver a comprehensive report with prioritised recommendations, including quick wins, medium-term improvements, and strategic initiatives with estimated impact and investment levels.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>What You Receive</h2>
+      <div class="deliverables">
+        <div class="deliverable">
+          <h3>Executive Summary</h3>
+          <p>A concise overview of key findings and priority recommendations for leadership stakeholders.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Detailed Audit Report</h3>
+          <p>Comprehensive analysis across all audit areas with evidence, benchmarks, and specific recommendations.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Prioritised Roadmap</h3>
+          <p>A phased implementation plan with quick wins, medium-term projects, and strategic initiatives.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Presentation and Workshop</h3>
+          <p>Interactive session to walk through findings, answer questions, and align stakeholders on next steps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Who Benefits from an Audit?</h2>
+      <p>A recruitment marketing audit is valuable for organisations experiencing:</p>
+      <ul class="benefits-list">
+        <li><strong>High cost-per-hire</strong> and over-reliance on expensive recruitment channels</li>
+        <li><strong>Low application volumes</strong> despite significant job advertising spend</li>
+        <li><strong>Poor candidate quality</strong> with many unqualified applicants</li>
+        <li><strong>High offer rejection rates</strong> suggesting employer brand perception issues</li>
+        <li><strong>Negative Glassdoor reviews</strong> affecting candidate perception</li>
+        <li><strong>Upcoming hiring initiatives</strong> requiring improved talent attraction</li>
+        <li><strong>Careers site redesign</strong> projects needing baseline assessment</li>
+        <li><strong>Employer brand refresh</strong> requiring current state documentation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>Related Services</h2>
+      <p>Following an audit, organisations often engage with these complementary services:</p>
+      <div class="related-services">
+        <a href="/services/recruitment-marketing-strategy" class="related-service">
+          <h3>Recruitment Marketing Strategy</h3>
+          <p>Develop a comprehensive strategy based on audit findings</p>
+        </a>
+        <a href="/services/employer-brand-assessment" class="related-service">
+          <h3>Employer Brand Assessment</h3>
+          <p>Deep-dive into employer brand perception and EVP alignment</p>
+        </a>
+        <a href="/services/outsourced-recruitment-marketing" class="related-service">
+          <h3>Outsourced Recruitment Marketing</h3>
+          <p>Ongoing support to implement audit recommendations</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What is a recruitment marketing audit?</h3>
+          <p>A recruitment marketing audit is a comprehensive evaluation of your talent attraction efforts, including your careers site, job advertisements, social media presence, employer brand messaging, and candidate experience. It identifies gaps, benchmarks against competitors, and provides actionable recommendations for improvement.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does a recruitment marketing audit take?</h3>
+          <p>A typical recruitment marketing audit takes 3-4 weeks from kickoff to final report delivery. This includes stakeholder interviews, data gathering, competitor analysis, candidate journey mapping, and the development of prioritised recommendations.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What does a recruitment marketing audit include?</h3>
+          <p>A comprehensive audit includes: careers site UX and content review, job advertisement analysis, social media footprint assessment, Glassdoor and Indeed presence evaluation, candidate journey mapping, competitor benchmarking, and a prioritised recommendations report with quick wins and strategic initiatives.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How much does a recruitment marketing audit cost?</h3>
+          <p>Investment varies based on scope and organisation size. A focused audit for a single business unit typically starts from EUR 5,000, while enterprise-wide audits covering multiple geographies and business lines range from EUR 15,000-30,000. Contact us for a tailored quote.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Who should conduct a recruitment marketing audit?</h3>
+          <p>Organisations should consider an audit when experiencing high cost-per-hire, low application volumes, poor quality candidates, high offer rejection rates, or when planning significant hiring initiatives. Companies undergoing employer brand refreshes or careers site redesigns also benefit from an objective baseline assessment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
+
+<style>
+  .service-section {
+    padding: 4rem 0;
+  }
+
+  .service-section--alt {
+    background: #f8f9fa;
+  }
+
+  .service-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+  }
+
+  .service-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  .audit-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .audit-area {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .audit-area h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: #1a1a2e;
+  }
+
+  .audit-area ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .audit-area li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+    font-size: 0.9375rem;
+  }
+
+  .audit-area li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #64ffda;
+    font-weight: bold;
+  }
+
+  .process-steps {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    background: #1a1a2e;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  .step-content p {
+    margin: 0;
+    color: #555;
+  }
+
+  .deliverables {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .deliverable {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .deliverable h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1a1a2e;
+  }
+
+  .deliverable p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #555;
+  }
+
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .benefits-list li {
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #64ffda;
+  }
+
+  .related-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .related-service {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .related-service:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+
+  .related-service h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a2e;
+  }
+
+  .related-service p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .faq-item {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1a1a2e;
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: 768px) {
+    .process-step {
+      grid-template-columns: 1fr;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  }
+</style>

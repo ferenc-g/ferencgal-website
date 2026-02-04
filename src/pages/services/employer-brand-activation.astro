@@ -1,0 +1,493 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const title = "Employer Brand Activation Services | Ferenc Gal";
+const description = "Bring your employer brand to life through integrated recruitment marketing programmes. Creative campaigns, content production, careers site optimisation, and employee advocacy.";
+const keywords = "employer brand activation, recruitment marketing campaigns, employer brand content, careers site optimisation, employee advocacy, employer brand creative";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is employer brand activation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Employer brand activation is bringing your employer brand and EVP to life through tangible expressions: campaigns, content, experiences, and touchpoints that communicate your employer brand to target audiences. It bridges the gap between strategy and execution."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does employer brand activation include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Activation typically includes: creative campaign development, content strategy and production, careers site design and optimisation, social media programmes, employee advocacy initiatives, recruitment advertising, and candidate experience design."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does employer brand activation take?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Initial activation programmes typically take 3-6 months to develop and launch, depending on scope. This includes creative development, content production, and channel setup. Ongoing activation is a continuous process of content creation, campaign execution, and optimisation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do we need an EVP before activation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A defined EVP provides the foundation for effective activation, ensuring consistent messaging and authentic storytelling. However, organisations can begin activation with existing brand elements while EVP work is in progress, using insights from activation to inform EVP development."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure employer brand activation success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Success metrics include: employer brand awareness and consideration, content engagement and reach, careers site traffic and conversion, application volume and quality, social media growth and engagement, employee advocacy participation, and ultimately impact on hiring outcomes."
+      }
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Employer Brand Activation",
+  "description": "Bringing your employer brand to life through integrated recruitment marketing programmes.",
+  "provider": {
+    "@type": "Person",
+    "name": "Ferenc Gal",
+    "url": "https://ferencgal.com"
+  },
+  "serviceType": "Employer Branding Consulting",
+  "areaServed": ["Ireland", "Europe"]
+};
+---
+
+<ServiceLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  serviceName="Employer Brand Activation"
+  serviceCategory="Employer Branding"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </Fragment>
+
+  <Fragment slot="intro">
+    Bringing your employer brand to life through integrated recruitment marketing programmes that attract the right talent. From creative campaigns to content production, we help you tell your employer story.
+  </Fragment>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>From Strategy to Reality</h2>
+      <p>An employer brand or EVP document is just the starting point. The real work is bringing it to life in ways that resonate with your target talent audiences. Strategy without activation is just words on paper.</p>
+      <p>Effective activation requires translating EVP pillars into compelling stories, creating content that cuts through the noise, and delivering consistent experiences across every touchpoint. It requires both creative excellence and operational discipline.</p>
+      <p>Many organisations struggle with activation because they lack the creative resources, channel expertise, or internal capacity to execute effectively. We help bridge this gap, providing strategic guidance and hands-on support.</p>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>Activation Services</h2>
+      <div class="activation-services">
+        <div class="activation-service">
+          <h3>Creative Campaign Development</h3>
+          <p>Developing campaign concepts that bring your EVP to life and differentiate you in the talent market.</p>
+          <ul>
+            <li>Campaign concept and creative brief</li>
+            <li>Key visual development</li>
+            <li>Copywriting and messaging</li>
+            <li>Multi-channel adaptation</li>
+            <li>Campaign launch planning</li>
+          </ul>
+        </div>
+        <div class="activation-service">
+          <h3>Content Strategy & Production</h3>
+          <p>Creating authentic content that showcases your employer brand through employee stories and experiences.</p>
+          <ul>
+            <li>Content strategy and calendar</li>
+            <li>Employee storytelling</li>
+            <li>Video production</li>
+            <li>Photography</li>
+            <li>Written content and blog posts</li>
+          </ul>
+        </div>
+        <div class="activation-service">
+          <h3>Careers Site Optimisation</h3>
+          <p>Ensuring your careers site effectively communicates your employer brand and converts visitors to applicants.</p>
+          <ul>
+            <li>UX and content audit</li>
+            <li>Content development</li>
+            <li>SEO optimisation</li>
+            <li>Conversion optimisation</li>
+            <li>Mobile experience</li>
+          </ul>
+        </div>
+        <div class="activation-service">
+          <h3>Social Media Programmes</h3>
+          <p>Building your employer brand presence across social platforms where your target talent spends time.</p>
+          <ul>
+            <li>Platform strategy</li>
+            <li>Content planning and creation</li>
+            <li>Community management</li>
+            <li>Paid social campaigns</li>
+            <li>Analytics and optimisation</li>
+          </ul>
+        </div>
+        <div class="activation-service">
+          <h3>Employee Advocacy</h3>
+          <p>Empowering employees to become authentic ambassadors for your employer brand.</p>
+          <ul>
+            <li>Programme design</li>
+            <li>Platform selection</li>
+            <li>Content enablement</li>
+            <li>Training and guidelines</li>
+            <li>Measurement and recognition</li>
+          </ul>
+        </div>
+        <div class="activation-service">
+          <h3>Multi-Channel Campaigns</h3>
+          <p>Integrated campaigns across channels to build awareness and drive applications for priority roles.</p>
+          <ul>
+            <li>Campaign planning</li>
+            <li>Media planning and buying</li>
+            <li>Job advertising optimisation</li>
+            <li>Remarketing programmes</li>
+            <li>Performance reporting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Our Approach</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Strategy Alignment</h3>
+            <p>We ensure activation efforts are grounded in your EVP, aligned with business priorities, and targeted at the right talent audiences.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Creative Development</h3>
+            <p>We develop campaign concepts and content approaches that bring your employer brand to life in distinctive, authentic ways.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Content Production</h3>
+            <p>We create high-quality content through our in-house multimedia studio and trusted production partners.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Channel Execution</h3>
+            <p>We execute across relevant channels, from careers sites and social media to job advertising and events.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Optimisation</h3>
+            <p>We continuously measure, learn, and optimise to improve performance and demonstrate ROI.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>What You Receive</h2>
+      <div class="deliverables">
+        <div class="deliverable">
+          <h3>Activation Strategy</h3>
+          <p>Comprehensive plan covering channels, content, campaigns, and measurement.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Creative Assets</h3>
+          <p>Campaign visuals, video content, photography, and written content.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Content Library</h3>
+          <p>Bank of reusable content assets including employee stories, culture content, and role-specific material.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Campaign Execution</h3>
+          <p>End-to-end campaign management across your priority channels.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Performance Reporting</h3>
+          <p>Regular reporting on activation performance against defined KPIs.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Guidelines & Playbooks</h3>
+          <p>Documentation enabling your team to maintain and extend activation efforts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Related Services</h2>
+      <p>Activation often works alongside these services:</p>
+      <div class="related-services">
+        <a href="/services/evp-development" class="related-service">
+          <h3>EVP Development</h3>
+          <p>Define the foundation for activation</p>
+        </a>
+        <a href="/services/employer-brand-assessment" class="related-service">
+          <h3>Employer Brand Assessment</h3>
+          <p>Understand your starting point</p>
+        </a>
+        <a href="/services/outsourced-recruitment-marketing" class="related-service">
+          <h3>Outsourced Recruitment Marketing</h3>
+          <p>Ongoing support for sustained activation</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What is employer brand activation?</h3>
+          <p>Employer brand activation is bringing your employer brand and EVP to life through tangible expressions: campaigns, content, experiences, and touchpoints that communicate your employer brand to target audiences. It bridges the gap between strategy and execution.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What does employer brand activation include?</h3>
+          <p>Activation typically includes: creative campaign development, content strategy and production, careers site design and optimisation, social media programmes, employee advocacy initiatives, recruitment advertising, and candidate experience design.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does employer brand activation take?</h3>
+          <p>Initial activation programmes typically take 3-6 months to develop and launch, depending on scope. This includes creative development, content production, and channel setup. Ongoing activation is a continuous process of content creation, campaign execution, and optimisation.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do we need an EVP before activation?</h3>
+          <p>A defined EVP provides the foundation for effective activation, ensuring consistent messaging and authentic storytelling. However, organisations can begin activation with existing brand elements while EVP work is in progress, using insights from activation to inform EVP development.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do you measure employer brand activation success?</h3>
+          <p>Success metrics include: employer brand awareness and consideration, content engagement and reach, careers site traffic and conversion, application volume and quality, social media growth and engagement, employee advocacy participation, and ultimately impact on hiring outcomes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
+
+<style>
+  .service-section {
+    padding: 4rem 0;
+  }
+
+  .service-section--alt {
+    background: #f8f9fa;
+  }
+
+  .service-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+  }
+
+  .service-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  .activation-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .activation-service {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .activation-service h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .activation-service > p {
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+    color: #666;
+  }
+
+  .activation-service ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .activation-service li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+    font-size: 0.875rem;
+  }
+
+  .activation-service li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: bold;
+  }
+
+  .process-steps {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    background: #6366f1;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  .step-content p {
+    margin: 0;
+    color: #555;
+  }
+
+  .deliverables {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .deliverable {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .deliverable h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .deliverable p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #555;
+  }
+
+  .related-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .related-service {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e8e8ed;
+  }
+
+  .related-service:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+
+  .related-service h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #6366f1;
+  }
+
+  .related-service p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .faq-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e8e8ed;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: 768px) {
+    .process-step {
+      grid-template-columns: 1fr;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,461 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const title = "Market Research & Employer Brand Tracking | Ferenc Gal";
+const description = "Regular research and tracking to monitor your employer brand health, competitive positioning, and candidate perceptions. Quarterly and annual tracking programmes.";
+const keywords = "employer brand tracking, recruitment market research, candidate perception research, employer brand health, competitive employer brand analysis, talent market intelligence";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is employer brand tracking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Employer brand tracking is regular research to monitor how your organisation is perceived as an employer over time. It measures awareness, consideration, preference, and sentiment among target talent audiences, enabling you to track progress and identify emerging issues."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should we track our employer brand?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most organisations benefit from quarterly or biannual tracking. Annual tracking is suitable for organisations with stable employer brands and consistent hiring patterns. More frequent tracking may be needed during major brand initiatives, crises, or significant market changes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What metrics should employer brand tracking include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Key metrics include: employer brand awareness, consideration rates, preference versus competitors, EVP attribute perception, application intent, employee advocacy likelihood, sentiment analysis, and employer Net Promoter Score (eNPS) among external audiences."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does employer brand tracking differ from an audit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An audit is a point-in-time comprehensive assessment, while tracking is ongoing measurement over time. Audits examine processes and touchpoints; tracking measures perception and sentiment. Organisations typically start with an audit to establish a baseline, then implement tracking to monitor progress."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the ROI of employer brand tracking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tracking enables data-driven decisions that improve recruitment marketing ROI. Organisations with tracking programmes can identify underperforming initiatives early, optimise channel spend, and demonstrate the impact of employer brand investments to leadership."
+      }
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Market Research & Employer Brand Tracking",
+  "description": "Regular research to monitor employer brand health, competitive positioning, and candidate perceptions over time.",
+  "provider": {
+    "@type": "Person",
+    "name": "Ferenc Gal",
+    "url": "https://ferencgal.com"
+  },
+  "serviceType": "Recruitment Marketing Consulting",
+  "areaServed": ["Ireland", "Europe"]
+};
+---
+
+<ServiceLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  serviceName="Market Research & Tracking"
+  serviceCategory="Recruitment Marketing"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </Fragment>
+
+  <Fragment slot="intro">
+    Regular research and tracking to monitor your employer brand health, competitive positioning, and candidate perceptions over time. Make data-driven decisions about your talent attraction investments.
+  </Fragment>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Why Track Your Employer Brand?</h2>
+      <p>Your employer brand exists in the minds of your target talent, whether you manage it or not. Without regular measurement, you are making talent attraction decisions based on assumptions rather than data.</p>
+      <p>Employer brand tracking gives you early warning of perception shifts, competitive threats, and emerging opportunities. It helps you demonstrate ROI on employer brand investments and make the case for continued or increased investment.</p>
+      <p>Organisations that track their employer brand can course-correct quickly when initiatives are not working. They can prove what is driving results and eliminate wasteful spending on channels and content that do not resonate.</p>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>Research Approaches</h2>
+      <div class="research-types">
+        <div class="research-type">
+          <h3>Candidate Perception Research</h3>
+          <p>Quantitative surveys of your target talent audiences measuring awareness, consideration, preference, and EVP attribute perception. Provides statistically significant data for tracking over time.</p>
+          <ul>
+            <li>Online panel surveys</li>
+            <li>Segmented by role, level, geography</li>
+            <li>Competitive comparison</li>
+            <li>EVP attribute importance and performance</li>
+          </ul>
+        </div>
+        <div class="research-type">
+          <h3>Social Listening & Sentiment</h3>
+          <p>Ongoing monitoring of online conversations about your organisation as an employer, tracking sentiment, themes, and share of voice against competitors.</p>
+          <ul>
+            <li>Social media monitoring</li>
+            <li>Glassdoor and Indeed tracking</li>
+            <li>Employer review sentiment analysis</li>
+            <li>Competitive share of voice</li>
+          </ul>
+        </div>
+        <div class="research-type">
+          <h3>Talent Market Intelligence</h3>
+          <p>Analysis of talent supply and demand dynamics, salary benchmarking, competitor hiring activity, and emerging skill trends in your target markets.</p>
+          <ul>
+            <li>Talent pool sizing</li>
+            <li>Competitor hiring patterns</li>
+            <li>Salary and benefits benchmarking</li>
+            <li>Skills trend analysis</li>
+          </ul>
+        </div>
+        <div class="research-type">
+          <h3>Candidate Experience Research</h3>
+          <p>Feedback collection from candidates at key journey stages to understand experience quality and identify improvement opportunities.</p>
+          <ul>
+            <li>Application experience surveys</li>
+            <li>Interview feedback collection</li>
+            <li>Offer stage research</li>
+            <li>Declined offer analysis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Tracking Programme Options</h2>
+      <div class="programme-options">
+        <div class="programme-option">
+          <h3>Quarterly Tracking</h3>
+          <p>Best for organisations actively investing in employer brand and needing regular feedback loops.</p>
+          <ul>
+            <li>Four waves per year</li>
+            <li>Consistent methodology</li>
+            <li>Trend analysis</li>
+            <li>Quarterly insights reports</li>
+            <li>Competitive benchmarking</li>
+          </ul>
+        </div>
+        <div class="programme-option">
+          <h3>Biannual Tracking</h3>
+          <p>Suitable for organisations with stable employer brands seeking regular but less frequent measurement.</p>
+          <ul>
+            <li>Two waves per year</li>
+            <li>Deep-dive analysis</li>
+            <li>Strategic recommendations</li>
+            <li>Executive presentations</li>
+            <li>Annual comparison</li>
+          </ul>
+        </div>
+        <div class="programme-option">
+          <h3>Annual Assessment</h3>
+          <p>Appropriate for organisations establishing baseline measurement or with limited research budgets.</p>
+          <ul>
+            <li>Comprehensive annual study</li>
+            <li>Full competitive analysis</li>
+            <li>Strategic roadmap</li>
+            <li>Year-over-year tracking</li>
+            <li>Leadership briefing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>What You Receive</h2>
+      <div class="deliverables">
+        <div class="deliverable">
+          <h3>Tracking Dashboard</h3>
+          <p>Interactive dashboard showing key metrics, trends, and competitive positioning over time.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Insights Reports</h3>
+          <p>Regular analysis reports highlighting key findings, emerging trends, and recommended actions.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Competitive Intelligence</h3>
+          <p>Ongoing monitoring of competitor employer brand activity and positioning.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Strategic Recommendations</h3>
+          <p>Actionable recommendations based on research findings to optimise your talent attraction.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Executive Briefings</h3>
+          <p>Quarterly or annual presentations to leadership on employer brand health and progress.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Alerts and Updates</h3>
+          <p>Real-time notifications of significant sentiment shifts or competitive developments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Related Services</h2>
+      <p>Research and tracking often works alongside these services:</p>
+      <div class="related-services">
+        <a href="/services/recruitment-marketing-audit" class="related-service">
+          <h3>Recruitment Marketing Audit</h3>
+          <p>Establish a baseline before tracking begins</p>
+        </a>
+        <a href="/services/recruitment-marketing-strategy" class="related-service">
+          <h3>Recruitment Marketing Strategy</h3>
+          <p>Use insights to inform strategy development</p>
+        </a>
+        <a href="/services/employer-brand-assessment" class="related-service">
+          <h3>Employer Brand Assessment</h3>
+          <p>Deep-dive into employer brand perception</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What is employer brand tracking?</h3>
+          <p>Employer brand tracking is regular research to monitor how your organisation is perceived as an employer over time. It measures awareness, consideration, preference, and sentiment among target talent audiences, enabling you to track progress and identify emerging issues.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How often should we track our employer brand?</h3>
+          <p>Most organisations benefit from quarterly or biannual tracking. Annual tracking is suitable for organisations with stable employer brands and consistent hiring patterns. More frequent tracking may be needed during major brand initiatives, crises, or significant market changes.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What metrics should employer brand tracking include?</h3>
+          <p>Key metrics include: employer brand awareness, consideration rates, preference versus competitors, EVP attribute perception, application intent, employee advocacy likelihood, sentiment analysis, and employer Net Promoter Score (eNPS) among external audiences.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How does employer brand tracking differ from an audit?</h3>
+          <p>An audit is a point-in-time comprehensive assessment, while tracking is ongoing measurement over time. Audits examine processes and touchpoints; tracking measures perception and sentiment. Organisations typically start with an audit to establish a baseline, then implement tracking to monitor progress.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is the ROI of employer brand tracking?</h3>
+          <p>Tracking enables data-driven decisions that improve recruitment marketing ROI. Organisations with tracking programmes can identify underperforming initiatives early, optimise channel spend, and demonstrate the impact of employer brand investments to leadership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
+
+<style>
+  .service-section {
+    padding: 4rem 0;
+  }
+
+  .service-section--alt {
+    background: #f8f9fa;
+  }
+
+  .service-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+  }
+
+  .service-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  .research-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .research-type {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .research-type h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .research-type > p {
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+  }
+
+  .research-type ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .research-type li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+    font-size: 0.875rem;
+  }
+
+  .research-type li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2a9d8f;
+    font-weight: bold;
+  }
+
+  .programme-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .programme-option {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e8e8ed;
+  }
+
+  .programme-option h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .programme-option > p {
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+  }
+
+  .programme-option ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .programme-option li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+    font-size: 0.875rem;
+  }
+
+  .programme-option li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2a9d8f;
+    font-weight: bold;
+  }
+
+  .deliverables {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .deliverable {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .deliverable h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .deliverable p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #555;
+  }
+
+  .related-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .related-service {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e8e8ed;
+  }
+
+  .related-service:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+
+  .related-service h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #1d3557;
+  }
+
+  .related-service p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .faq-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e8e8ed;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+</style>

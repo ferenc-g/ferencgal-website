@@ -1,0 +1,466 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const title = "Recruitment Marketing Pilots & Proof of Concepts | Ferenc Gal";
+const description = "Structured pilot programmes to test new recruitment marketing approaches, channels, or technologies before full-scale implementation.";
+const keywords = "recruitment marketing pilot, recruitment technology pilot, proof of concept, recruitment marketing testing, channel testing, recruitment innovation";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a recruitment marketing pilot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A recruitment marketing pilot is a controlled test of a new approach, channel, or technology before full-scale implementation. It allows organisations to validate assumptions, measure performance, and refine approaches with limited risk and investment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long should a recruitment marketing pilot run?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typical pilots run 8-12 weeks to gather sufficient data for meaningful conclusions. Shorter pilots may miss seasonal variations or fail to reach statistical significance. Longer pilots may delay decisions unnecessarily or allow market conditions to change."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes a good pilot candidate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Good pilot candidates include: new recruitment marketing channels, emerging technologies, innovative content formats, untested messaging approaches, new vendor solutions, and significant process changes. Pilots are most valuable when outcomes are uncertain and the cost of full-scale failure would be significant."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure pilot success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Success metrics should be defined before the pilot begins and typically include: primary KPIs aligned with business objectives, secondary metrics for learning, qualitative feedback from users and candidates, and cost and resource requirements at scale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens after a successful pilot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Successful pilots lead to scale-up planning, including resource requirements, technology integration, process documentation, training programmes, and phased rollout approaches. We develop business cases that quantify expected benefits at scale."
+      }
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Recruitment Marketing Pilots & Proof of Concepts",
+  "description": "Structured pilot programmes to test new recruitment marketing approaches before full-scale implementation.",
+  "provider": {
+    "@type": "Person",
+    "name": "Ferenc Gal",
+    "url": "https://ferencgal.com"
+  },
+  "serviceType": "Recruitment Marketing Consulting",
+  "areaServed": ["Ireland", "Europe"]
+};
+---
+
+<ServiceLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  serviceName="Pilots & Proof of Concepts"
+  serviceCategory="Recruitment Marketing"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </Fragment>
+
+  <Fragment slot="intro">
+    Structured pilot programmes to test new recruitment marketing approaches, channels, or technologies before committing to full-scale implementation. Reduce risk and validate assumptions with controlled experiments.
+  </Fragment>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Why Run Pilots?</h2>
+      <p>Recruitment marketing is evolving rapidly. New channels emerge, technologies advance, and candidate expectations shift. Organisations need to innovate to stay competitive, but wholesale changes carry significant risk.</p>
+      <p>Pilots allow you to test new approaches with limited investment and controlled risk. You can validate assumptions before committing significant budget, learn what works in your specific context, and build internal buy-in with evidence.</p>
+      <p>Many recruitment marketing investments fail because they were not tested properly. Pilots prevent costly mistakes by exposing issues early, when they are cheaper to address.</p>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>Common Pilot Scenarios</h2>
+      <div class="pilot-scenarios">
+        <div class="pilot-scenario">
+          <h3>New Channel Testing</h3>
+          <p>Test emerging platforms or untried channels to understand their effectiveness for your target audiences.</p>
+          <ul>
+            <li>TikTok and short-form video</li>
+            <li>Programmatic job advertising</li>
+            <li>Niche community platforms</li>
+            <li>Podcast sponsorships</li>
+          </ul>
+        </div>
+        <div class="pilot-scenario">
+          <h3>Technology Evaluation</h3>
+          <p>Evaluate recruitment marketing technologies before enterprise-wide procurement.</p>
+          <ul>
+            <li>CRM platforms</li>
+            <li>Recruitment marketing automation</li>
+            <li>AI-powered sourcing tools</li>
+            <li>Chatbots and conversational AI</li>
+          </ul>
+        </div>
+        <div class="pilot-scenario">
+          <h3>Content Approaches</h3>
+          <p>Test new content formats, messaging approaches, or storytelling techniques.</p>
+          <ul>
+            <li>Employee-generated content</li>
+            <li>Video testimonials</li>
+            <li>Day-in-the-life content</li>
+            <li>Behind-the-scenes formats</li>
+          </ul>
+        </div>
+        <div class="pilot-scenario">
+          <h3>Process Innovation</h3>
+          <p>Pilot new ways of working that could improve efficiency or candidate experience.</p>
+          <ul>
+            <li>Talent community programmes</li>
+            <li>Employee advocacy initiatives</li>
+            <li>Referral programme redesign</li>
+            <li>Campus recruitment approaches</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>The Pilot Process</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Hypothesis Development</h3>
+            <p>We define clear hypotheses about what we expect to learn, the assumptions being tested, and the conditions under which the pilot would be considered successful.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Pilot Design</h3>
+            <p>We design the pilot methodology, including scope, duration, target audiences, success metrics, and control conditions where appropriate.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Execution</h3>
+            <p>We run the pilot with rigorous tracking and documentation, making real-time adjustments as needed while maintaining experimental integrity.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Analysis</h3>
+            <p>We analyse quantitative results against success criteria and gather qualitative insights from participants and stakeholders.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Recommendations</h3>
+            <p>We deliver recommendations on whether to scale, modify, or discontinue the approach, including business case and implementation planning if scaling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>What You Receive</h2>
+      <div class="deliverables">
+        <div class="deliverable">
+          <h3>Pilot Design Document</h3>
+          <p>Detailed methodology with hypotheses, success criteria, timeline, and resource requirements.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Tracking Dashboard</h3>
+          <p>Real-time visibility into pilot performance against defined metrics.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Progress Reports</h3>
+          <p>Regular updates on pilot progress, early learnings, and any required adjustments.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Final Analysis Report</h3>
+          <p>Comprehensive analysis of results with clear recommendations.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Business Case</h3>
+          <p>If scaling is recommended, a full business case with projected ROI and resource requirements.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Scale-up Roadmap</h3>
+          <p>Implementation plan for full-scale rollout if the pilot succeeds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Related Services</h2>
+      <p>Pilots often connect with these services:</p>
+      <div class="related-services">
+        <a href="/services/recruitment-marketing-strategy" class="related-service">
+          <h3>Recruitment Marketing Strategy</h3>
+          <p>Pilot initiatives identified in strategy development</p>
+        </a>
+        <a href="/services/recruitment-technology" class="related-service">
+          <h3>Recruitment Technology</h3>
+          <p>Technology evaluation through structured pilots</p>
+        </a>
+        <a href="/services/outsourced-recruitment-marketing" class="related-service">
+          <h3>Outsourced Recruitment Marketing</h3>
+          <p>Scale successful pilots with ongoing support</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What is a recruitment marketing pilot?</h3>
+          <p>A recruitment marketing pilot is a controlled test of a new approach, channel, or technology before full-scale implementation. It allows organisations to validate assumptions, measure performance, and refine approaches with limited risk and investment.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long should a recruitment marketing pilot run?</h3>
+          <p>Typical pilots run 8-12 weeks to gather sufficient data for meaningful conclusions. Shorter pilots may miss seasonal variations or fail to reach statistical significance. Longer pilots may delay decisions unnecessarily or allow market conditions to change.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What makes a good pilot candidate?</h3>
+          <p>Good pilot candidates include: new recruitment marketing channels, emerging technologies, innovative content formats, untested messaging approaches, new vendor solutions, and significant process changes. Pilots are most valuable when outcomes are uncertain and the cost of full-scale failure would be significant.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do you measure pilot success?</h3>
+          <p>Success metrics should be defined before the pilot begins and typically include: primary KPIs aligned with business objectives, secondary metrics for learning, qualitative feedback from users and candidates, and cost and resource requirements at scale.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What happens after a successful pilot?</h3>
+          <p>Successful pilots lead to scale-up planning, including resource requirements, technology integration, process documentation, training programmes, and phased rollout approaches. We develop business cases that quantify expected benefits at scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
+
+<style>
+  .service-section {
+    padding: 4rem 0;
+  }
+
+  .service-section--alt {
+    background: #f8f9fa;
+  }
+
+  .service-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+  }
+
+  .service-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  .pilot-scenarios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .pilot-scenario {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .pilot-scenario h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .pilot-scenario > p {
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+  }
+
+  .pilot-scenario ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .pilot-scenario li {
+    padding: 0.4rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+    font-size: 0.875rem;
+  }
+
+  .pilot-scenario li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #2a9d8f;
+    font-weight: bold;
+  }
+
+  .process-steps {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    background: #1d3557;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  .step-content p {
+    margin: 0;
+    color: #555;
+  }
+
+  .deliverables {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .deliverable {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .deliverable h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .deliverable p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #555;
+  }
+
+  .related-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .related-service {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e8e8ed;
+  }
+
+  .related-service:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+
+  .related-service h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #1d3557;
+  }
+
+  .related-service p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .faq-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e8e8ed;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: 768px) {
+    .process-step {
+      grid-template-columns: 1fr;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  }
+</style>

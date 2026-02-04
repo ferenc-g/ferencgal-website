@@ -1,0 +1,465 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const title = "Recruitment Marketing Strategy Development | Ferenc Gal";
+const description = "Data-driven recruitment marketing strategy aligned with your talent acquisition objectives. Audience analysis, channel strategy, content planning, and measurement frameworks.";
+const keywords = "recruitment marketing strategy, talent acquisition strategy, employer brand strategy, recruitment campaign planning, candidate persona development, recruitment channel strategy";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a recruitment marketing strategy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A recruitment marketing strategy is a comprehensive plan that defines how your organisation will attract and engage talent. It includes target audience analysis, channel selection, content strategy, messaging frameworks, campaign planning, and measurement approaches to optimise your talent attraction efforts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to develop a recruitment marketing strategy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A comprehensive recruitment marketing strategy typically takes 4-6 weeks to develop. This includes stakeholder workshops, audience research, competitor analysis, channel evaluation, content planning, and the creation of measurement frameworks and implementation roadmaps."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the key components of a recruitment marketing strategy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Key components include: target audience and candidate persona development, employer brand positioning, channel strategy and media planning, content strategy and messaging framework, campaign calendar, budget allocation, KPI definition, and measurement frameworks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you measure recruitment marketing success?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Success is measured through metrics including: application volume and quality, source of hire, cost per application and cost per hire, careers site traffic and conversion rates, social media engagement, employer brand awareness, offer acceptance rates, and time to fill."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should a recruitment marketing strategy be updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Recruitment marketing strategies should be reviewed quarterly and refreshed annually. Major business changes, significant shifts in hiring needs, or major platform changes may require more frequent updates. Tactical campaign plans typically operate on monthly or quarterly cycles."
+      }
+    }
+  ]
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Recruitment Marketing Strategy Development",
+  "description": "Development of comprehensive, data-driven recruitment marketing strategies aligned with talent acquisition objectives.",
+  "provider": {
+    "@type": "Person",
+    "name": "Ferenc Gal",
+    "url": "https://ferencgal.com"
+  },
+  "serviceType": "Recruitment Marketing Consulting",
+  "areaServed": ["Ireland", "Europe"]
+};
+---
+
+<ServiceLayout
+  title={title}
+  description={description}
+  keywords={keywords}
+  serviceName="Recruitment Marketing Strategy"
+  serviceCategory="Recruitment Marketing"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
+  </Fragment>
+
+  <Fragment slot="intro">
+    Development of a comprehensive, data-driven recruitment marketing strategy that aligns with your talent acquisition objectives and positions your employer brand to attract the right candidates.
+  </Fragment>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Why Do You Need a Recruitment Marketing Strategy?</h2>
+      <p>Most organisations approach recruitment marketing reactively, posting jobs when positions open and hoping the right candidates apply. This approach is expensive, inconsistent, and leaves you competing for talent at the same time as everyone else.</p>
+      <p>A proactive recruitment marketing strategy builds your talent pipeline before you need it. It creates awareness and consideration among passive candidates who may not be actively looking but would consider the right opportunity. It positions your organisation as an employer of choice in your target talent markets.</p>
+      <p>Without a strategy, you are likely overspending on channels that do not work for your audience while underinvesting in those that do. A strategy brings focus, efficiency, and measurable results to your talent attraction efforts.</p>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>What the Strategy Includes</h2>
+      <div class="strategy-components">
+        <div class="strategy-component">
+          <h3>Audience Analysis</h3>
+          <ul>
+            <li>Candidate persona development</li>
+            <li>Talent market mapping</li>
+            <li>Competitor talent analysis</li>
+            <li>Candidate motivation research</li>
+            <li>Channel preference insights</li>
+            <li>Content consumption patterns</li>
+          </ul>
+        </div>
+        <div class="strategy-component">
+          <h3>Channel Strategy</h3>
+          <ul>
+            <li>Owned media optimisation</li>
+            <li>Paid media planning</li>
+            <li>Earned media opportunities</li>
+            <li>Social platform selection</li>
+            <li>Job board strategy</li>
+            <li>Community and event presence</li>
+          </ul>
+        </div>
+        <div class="strategy-component">
+          <h3>Content Strategy</h3>
+          <ul>
+            <li>Messaging framework development</li>
+            <li>Content pillar definition</li>
+            <li>Employee storytelling approach</li>
+            <li>Visual and video guidelines</li>
+            <li>Content calendar creation</li>
+            <li>Localisation requirements</li>
+          </ul>
+        </div>
+        <div class="strategy-component">
+          <h3>Measurement Framework</h3>
+          <ul>
+            <li>KPI definition and targets</li>
+            <li>Attribution modelling</li>
+            <li>Reporting dashboard design</li>
+            <li>A/B testing approach</li>
+            <li>ROI calculation methodology</li>
+            <li>Optimisation cadence</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>The Strategy Development Process</h2>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Discovery Workshop</h3>
+            <p>We begin with stakeholder workshops to understand your business objectives, hiring plans, current challenges, and competitive landscape. This shapes the strategic direction and ensures alignment across the organisation.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Audience Research</h3>
+            <p>We develop detailed candidate personas based on your target roles, analysing their motivations, career drivers, information sources, and decision-making processes.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Competitive Analysis</h3>
+            <p>We analyse how your talent competitors position themselves, which channels they use, and what content resonates with your shared target audience.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Strategy Development</h3>
+            <p>We synthesise research insights into a comprehensive strategy covering positioning, channels, content, campaigns, and measurement.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Implementation Planning</h3>
+            <p>We create a phased implementation roadmap with resource requirements, budget allocation, and a campaign calendar for the first 12 months.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>What You Receive</h2>
+      <div class="deliverables">
+        <div class="deliverable">
+          <h3>Strategic Framework</h3>
+          <p>Comprehensive strategy document covering positioning, audiences, channels, content, and measurement.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Candidate Personas</h3>
+          <p>Detailed profiles of your target talent segments with motivations, channels, and messaging approaches.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Channel Plan</h3>
+          <p>Prioritised channel strategy with budget allocation recommendations and expected outcomes.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Content Framework</h3>
+          <p>Messaging pillars, content themes, and a 12-month content calendar with campaign concepts.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Measurement Dashboard</h3>
+          <p>KPI framework with targets, reporting templates, and attribution approach.</p>
+        </div>
+        <div class="deliverable">
+          <h3>Implementation Roadmap</h3>
+          <p>Phased plan with milestones, resource requirements, and dependencies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section">
+    <div class="container">
+      <h2>Related Services</h2>
+      <p>Strategy development often works alongside these services:</p>
+      <div class="related-services">
+        <a href="/services/recruitment-marketing-audit" class="related-service">
+          <h3>Recruitment Marketing Audit</h3>
+          <p>Baseline assessment before strategy development</p>
+        </a>
+        <a href="/services/outsourced-recruitment-marketing" class="related-service">
+          <h3>Outsourced Recruitment Marketing</h3>
+          <p>Ongoing support to execute your strategy</p>
+        </a>
+        <a href="/services/evp-development" class="related-service">
+          <h3>EVP Development</h3>
+          <p>Define your employer brand foundation</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="service-section service-section--alt">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What is a recruitment marketing strategy?</h3>
+          <p>A recruitment marketing strategy is a comprehensive plan that defines how your organisation will attract and engage talent. It includes target audience analysis, channel selection, content strategy, messaging frameworks, campaign planning, and measurement approaches to optimise your talent attraction efforts.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How long does it take to develop a recruitment marketing strategy?</h3>
+          <p>A comprehensive recruitment marketing strategy typically takes 4-6 weeks to develop. This includes stakeholder workshops, audience research, competitor analysis, channel evaluation, content planning, and the creation of measurement frameworks and implementation roadmaps.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What are the key components of a recruitment marketing strategy?</h3>
+          <p>Key components include: target audience and candidate persona development, employer brand positioning, channel strategy and media planning, content strategy and messaging framework, campaign calendar, budget allocation, KPI definition, and measurement frameworks.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How do you measure recruitment marketing success?</h3>
+          <p>Success is measured through metrics including: application volume and quality, source of hire, cost per application and cost per hire, careers site traffic and conversion rates, social media engagement, employer brand awareness, offer acceptance rates, and time to fill.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How often should a recruitment marketing strategy be updated?</h3>
+          <p>Recruitment marketing strategies should be reviewed quarterly and refreshed annually. Major business changes, significant shifts in hiring needs, or major platform changes may require more frequent updates. Tactical campaign plans typically operate on monthly or quarterly cycles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</ServiceLayout>
+
+<style>
+  .service-section {
+    padding: 4rem 0;
+  }
+
+  .service-section--alt {
+    background: #f8f9fa;
+  }
+
+  .service-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+  }
+
+  .service-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    color: #444;
+  }
+
+  .strategy-components {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .strategy-component {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .strategy-component h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: #1a1a2e;
+  }
+
+  .strategy-component ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .strategy-component li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #555;
+    font-size: 0.9375rem;
+  }
+
+  .strategy-component li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2a9d8f;
+    font-weight: bold;
+  }
+
+  .process-steps {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .process-step {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    background: #1d3557;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  .step-content p {
+    margin: 0;
+    color: #555;
+  }
+
+  .deliverables {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .deliverable {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  .deliverable h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .deliverable p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: #555;
+  }
+
+  .related-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .related-service {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #e8e8ed;
+  }
+
+  .related-service:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  }
+
+  .related-service h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #1d3557;
+  }
+
+  .related-service p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .faq-list {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .faq-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e8e8ed;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #1d3557;
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: 768px) {
+    .process-step {
+      grid-template-columns: 1fr;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
+  }
+</style>
