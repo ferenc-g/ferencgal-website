@@ -281,7 +281,11 @@ p {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 12px;
+    min-width: 48px;
+    min-height: 48px;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav-toggle span {
