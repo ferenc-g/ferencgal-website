@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://ferencgal.com/sitemap.xml
+Sitemap: https://ferencgal.com/sitemap-index.xml
 
 # Allow AI crawlers to index content
 User-agent: GPTBot
