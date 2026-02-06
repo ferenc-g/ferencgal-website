@@ -88,4 +88,12 @@ const { rows, weakLabel = "Weak Brand", strongLabel = "Strong Brand" } = Astro.p
     background-color: rgba(42, 157, 143, 0.05);
     font-weight: 500;
   }
+
+  @media (max-width: 480px) {
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.5rem 0.4rem;
+      font-size: 0.8rem;
+    }
+  }
 </style>
