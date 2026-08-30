@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Page Not Found | Ferenc Gál";
+const description = "The page you're looking for doesn't exist. Browse my writing on healthtech marketing and AI, or head back to the homepage.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="error-page">
+    <div class="container">
+      <p class="error-eyebrow">Page Not Found</p>
+      <p class="error-code">404</p>
+      <h1>This page doesn't <em>exist.</em></h1>
+      <p class="error-description">The page you're looking for may have been moved or removed. Try one of the links below.</p>
+      <div class="error-actions">
+        <a href="/" class="btn btn-primary">Back to Homepage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <a href="/contact" class="btn btn-secondary">Get in Touch</a>
+      </div>
+
+      <div class="error-suggestions">
+        <h2>Popular pages</h2>
+        <div class="error-links">
+          <a href="/blog" class="error-link-card">
+            <span class="error-link-label">Writing</span>
+            <span class="error-link-title">Blog</span>
+          </a>
+          <a href="/#about" class="error-link-card">
+            <span class="error-link-label">Who I Am</span>
+            <span class="error-link-title">About</span>
+          </a>
+          <a href="/contact" class="error-link-card">
+            <span class="error-link-label">Say Hello</span>
+            <span class="error-link-title">Contact</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .error-page {
+    padding-top: var(--nav-height);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .error-page .container {
+    max-width: 640px;
+  }
+
+  .error-eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .error-eyebrow::before,
+  .error-eyebrow::after {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background-color: var(--color-accent);
+  }
+
+  .error-code {
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 10vw, 7rem);
+    font-weight: 400;
+    color: var(--color-gray-200);
+    line-height: 1;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .error-page h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .error-page h1 em {
+    color: var(--color-accent);
+    font-style: normal;
+  }
+
+  .error-description {
+    color: var(--color-gray-500);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.7;
+  }
+
+  .error-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .error-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  .error-suggestions {
+    border-top: 1px solid var(--color-gray-200);
+    padding-top: var(--spacing-xl);
+  }
+
+  .error-suggestions h2 {
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .error-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+  }
+
+  .error-link-card {
+    background-color: var(--color-gray-50);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    text-decoration: none;
+    transition: var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .error-link-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .error-link-label {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent);
+    font-weight: 600;
+  }
+
+  .error-link-title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-base);
+    color: var(--color-primary-dark);
+    font-weight: 400;
+  }
+
+  @media (max-width: 768px) {
+    .error-links {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

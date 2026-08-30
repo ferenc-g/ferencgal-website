@@ -22,7 +22,7 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
 ---
 
 <BaseLayout
-  title={`${frontmatter.title} | Ferenc Gal`}
+  title={`${frontmatter.title} | Ferenc Gál`}
   description={frontmatter.description}
   ogType="article"
   publishedTime={isoDate}
@@ -37,12 +37,12 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
       "description": frontmatter.description,
       "author": {
         "@type": "Person",
-        "name": "Ferenc Gal",
+        "name": "Ferenc Gál",
         "url": "https://ferencgal.com"
       },
       "publisher": {
         "@type": "Person",
-        "name": "Ferenc Gal"
+        "name": "Ferenc Gál"
       },
       "datePublished": isoDate,
       "mainEntityOfPage": {
@@ -56,15 +56,15 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
     <div class="container">
       <div class="blog-post-meta">
         <span class="blog-post-tag">{frontmatter.category}</span>
-        <span class="blog-post-date">{formattedDate}</span>
+        <time class="blog-post-date" datetime={isoDate}>{formattedDate}</time>
       </div>
       <h1 class="blog-post-title">{frontmatter.title}</h1>
       <p class="blog-post-description">{frontmatter.description}</p>
       <div class="blog-post-author">
-        <img src="/fg-headshot.webp" alt="Ferenc Gal">
+        <img src="/fg-headshot.webp" alt="Ferenc Gál, Global Marketing Lead at Lanas Healthcare Technology" width="48" height="48" loading="eager">
         <div class="blog-post-author-info">
-          <span class="blog-post-author-name">Ferenc Gal</span>
-          <span class="blog-post-author-title">Recruitment Marketing & Employer Branding Consultant</span>
+          <span class="blog-post-author-name">Ferenc Gál</span>
+          <span class="blog-post-author-title">Global Marketing Lead, Lanas Healthcare Technology</span>
         </div>
       </div>
     </div>
@@ -79,9 +79,11 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
   <footer class="blog-post-footer">
     <div class="container">
       <div class="blog-post-cta">
-        <h3>Need help with your employer brand?</h3>
-        <p>I help organisations reduce cost per hire through strategic employer branding and recruitment marketing.</p>
-        <a href="/#contact" class="btn">Get in Touch</a>
+        <p class="blog-cta-eyebrow">Stay in the Loop</p>
+        <h3>Enjoyed this article?</h3>
+        <p>I share regular insights on healthtech marketing, AI in marketing, and B2B marketing leadership. Follow me on LinkedIn or browse the rest of the blog.</p>
+        <a href="https://www.linkedin.com/in/ferencg/" target="_blank" rel="noopener" class="btn">Follow on LinkedIn <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        <p class="blog-cta-detail"><a href="/blog">Or browse all articles</a></p>
       </div>
     </div>
   </footer>
@@ -91,7 +93,8 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
 /* Blog Post Specific Styles */
 .blog-post-header {
     padding: calc(var(--nav-height) + var(--spacing-2xl)) var(--spacing-lg) var(--spacing-xl);
-    background: linear-gradient(180deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+    background-color: var(--color-gray-50);
+    position: relative;
 }
 
 .blog-post-header .container {
@@ -104,7 +107,7 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
     flex-wrap: wrap;
 }
 
@@ -113,8 +116,8 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
     font-size: var(--font-size-xs);
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.25rem 0.75rem;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.85rem;
     background-color: var(--color-accent);
     color: var(--color-white);
     border-radius: var(--radius-sm);
@@ -122,14 +125,16 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
 
 .blog-post-date {
     font-size: var(--font-size-sm);
-    color: var(--color-gray-500);
+    color: var(--color-gray-400);
 }
 
 .blog-post-title {
+    font-family: var(--font-display);
+    font-weight: 400;
     font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 1.2;
+    line-height: 1.15;
     margin-bottom: var(--spacing-md);
-    color: var(--color-gray-900);
+    color: var(--color-primary-dark);
 }
 
 .blog-post-description {
@@ -152,6 +157,7 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
     height: 48px;
     border-radius: var(--radius-full);
     object-fit: cover;
+    border: 2px solid var(--color-gray-200);
 }
 
 .blog-post-author-info {
@@ -166,7 +172,7 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
 
 .blog-post-author-title {
     font-size: var(--font-size-sm);
-    color: var(--color-gray-500);
+    color: var(--color-gray-400);
 }
 
 /* Blog Content */
@@ -181,9 +187,27 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
 }
 
 .blog-post-content :global(h2) {
+    font-family: var(--font-display);
+    font-weight: 400;
     font-size: var(--font-size-2xl);
     margin-top: var(--spacing-2xl);
     margin-bottom: var(--spacing-md);
+    color: var(--color-primary-dark);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-gray-200);
+}
+
+.blog-post-content :global(h2:first-child) {
+    border-top: none;
+    padding-top: 0;
+}
+
+.blog-post-content :global(h3) {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--font-size-xl);
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-sm);
     color: var(--color-primary);
 }
 
@@ -195,14 +219,15 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
 }
 
 .blog-post-content :global(a) {
-    color: var(--color-primary);
+    color: var(--color-accent);
     text-decoration: underline;
     text-decoration-color: var(--color-accent);
-    text-underline-offset: 2px;
+    text-underline-offset: 3px;
+    transition: var(--transition-fast);
 }
 
 .blog-post-content :global(a:hover) {
-    color: var(--color-accent);
+    color: var(--color-accent-dark);
 }
 
 .blog-post-content :global(strong) {
@@ -222,10 +247,22 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
     margin-bottom: var(--spacing-sm);
 }
 
+.blog-post-content :global(blockquote) {
+    border-left: 3px solid var(--color-accent);
+    padding-left: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+    font-style: italic;
+}
+
+.blog-post-content :global(blockquote p) {
+    color: var(--color-gray-500);
+    font-size: var(--font-size-xl);
+}
+
 /* Blog Post Footer */
 .blog-post-footer {
-    padding: var(--spacing-2xl) var(--spacing-lg);
-    background-color: var(--color-gray-50);
+    padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-2xl);
+    background-color: var(--color-white);
 }
 
 .blog-post-footer .container {
@@ -235,27 +272,83 @@ const isoDate = frontmatter.pubDate.toISOString().split('T')[0];
 }
 
 .blog-post-cta {
-    background-color: var(--color-primary);
-    padding: var(--spacing-xl);
+    background-color: var(--color-primary-dark);
+    padding: var(--spacing-2xl) var(--spacing-xl);
     border-radius: var(--radius-lg);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-post-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
+}
+
+.blog-cta-eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-accent-light);
+    margin-bottom: var(--spacing-md);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.blog-cta-eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background-color: var(--color-accent-light);
 }
 
 .blog-post-cta h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: var(--font-size-2xl);
     color: var(--color-white);
     margin-bottom: var(--spacing-sm);
 }
 
 .blog-post-cta p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: var(--spacing-lg);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .blog-post-cta .btn {
     background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    text-decoration: none;
+    transition: var(--transition-base);
 }
 
 .blog-post-cta .btn:hover {
     background-color: var(--color-accent-light);
+    transform: translateY(-1px);
+}
+
+.blog-cta-detail {
+    font-size: var(--font-size-xs) !important;
+    color: rgba(255, 255, 255, 0.35) !important;
+    margin-top: var(--spacing-sm);
+    margin-bottom: 0 !important;
+    font-style: italic;
 }
 </style>

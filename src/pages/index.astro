@@ -2,15 +2,16 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-// Fetch blog posts at build time
+// Fetch current (non-archived) blog posts at build time
 const posts = await getCollection('blog');
-const recentPosts = posts.sort((a, b) =>
-    b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-).slice(0, 4);
+const recentPosts = posts
+    .filter(post => !post.data.archived)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+    .slice(0, 4);
 
-const title = "Ferenc Gal | Recruitment Marketing & Employer Branding";
-const description = "Recruitment marketing and employer branding consultant in Dublin. Helping organisations become talent destinations.";
-const keywords = "recruitment marketing, employer branding, employer brand, EVP, employer value proposition, talent attraction, recruitment marketing consultant, employer branding consultant, Dublin, Ireland, recruitment marketing audit, talent acquisition, candidate experience, employer brand strategy";
+const title = "Ferenc Gál | AI-Native Marketing Leadership in Healthtech";
+const description = "Ferenc Gál is Global Marketing Lead at Lanas Healthcare Technology. He writes about healthtech marketing, AI in marketing, and marketing leadership.";
+const keywords = "healthtech marketing, healthcare technology marketing, AI in marketing, AI-native marketing, marketing leadership, Ferenc Gál, Ferenc Gal, Dublin, Ireland";
 ---
 
 <BaseLayout title={title} description={description} keywords={keywords}>
@@ -19,30 +20,23 @@ const keywords = "recruitment marketing, employer branding, employer brand, EVP,
         <script type="application/ld+json" set:html={JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            "name": "Ferenc Gal",
+            "name": "Ferenc Gál",
             "alternateName": "Ferenc Gal",
             "url": "https://ferencgal.com",
             "image": "https://ferencgal.com/fg-headshot.webp",
-            "jobTitle": "Director of Marketing Consulting",
+            "jobTitle": "Global Marketing Lead",
             "worksFor": {
                 "@type": "Organization",
-                "name": "Future of Work Institute",
-                "url": "https://www.cpl.com/ie/for-clients/cpl-services/future-of-work-institute",
-                "parentOrganization": {
-                    "@type": "Organization",
-                    "name": "Cpl"
-                }
+                "name": "Lanas Healthcare Technology"
             },
-            "description": "Recruitment marketing and employer branding consultant with expertise in employer brand development, EVP creation, recruitment marketing audits, and talent attraction strategies.",
+            "description": "Marketing leader in healthcare technology. Writes about healthtech marketing, AI in marketing, and marketing leadership.",
             "knowsAbout": [
-                "Recruitment Marketing",
-                "Employer Branding",
-                "Employer Value Proposition",
-                "Talent Attraction",
-                "Candidate Experience",
-                "Recruitment Marketing Audits",
-                "Employer Brand Strategy",
-                "EVP Development"
+                "Healthcare Technology Marketing",
+                "AI in Marketing",
+                "B2B Marketing Strategy",
+                "Brand Strategy",
+                "Demand Generation",
+                "Marketing Leadership"
             ],
             "alumniOf": [
                 { "@type": "EducationalOrganization", "name": "Budapest University of Technology" },
@@ -60,320 +54,85 @@ const keywords = "recruitment marketing, employer branding, employer brand, EVP,
             },
             "sameAs": ["https://www.linkedin.com/in/ferencg/"]
         })} />
-        <script type="application/ld+json" set:html={JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            "name": "Ferenc Gal - Recruitment Marketing & Employer Branding",
-            "description": "Expert recruitment marketing and employer branding consulting services. Specialising in recruitment marketing audits, employer brand development, EVP creation, and talent attraction strategies for organisations across Ireland and Europe.",
-            "url": "https://ferencgal.com",
-            "image": "https://ferencgal.com/fg-headshot.webp",
-            "priceRange": "$$$$",
-            "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Dublin",
-                "addressCountry": "Ireland"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 53.3498,
-                "longitude": -6.2603
-            },
-            "areaServed": [
-                { "@type": "Country", "name": "Ireland" },
-                { "@type": "Continent", "name": "Europe" }
-            ],
-            "serviceType": [
-                "Recruitment Marketing Consulting",
-                "Employer Branding",
-                "Recruitment Marketing Audits",
-                "Employer Value Proposition Development",
-                "Talent Attraction Strategy",
-                "Candidate Experience Design"
-            ],
-            "founder": { "@type": "Person", "name": "Ferenc Gal" }
-        })} />
     </Fragment>
 
-    <header class="hero">
+    <header class="hero hero--compact">
         <div class="hero-content">
-            <div class="hero-image">
-                <img src="/fg-headshot.webp" alt="Ferenc Gal - Recruitment Marketing & Employer Branding Consultant">
+            <div class="hero-intro">
+                <div class="hero-image hero-image--small">
+                    <img src="/fg-headshot.webp" alt="Ferenc Gál, Global Marketing Lead at Lanas Healthcare Technology" width="280" height="280" loading="eager">
+                </div>
+                <div class="hero-intro-text">
+                    <p class="hero-eyebrow">Ferenc Gál</p>
+                    <p class="hero-affiliation-inline">Global Marketing Lead at Lanas Healthcare Technology</p>
+                </div>
             </div>
-            <p class="hero-eyebrow">Recruitment Marketing & Employer Branding</p>
-            <h1 class="hero-title">I help organisations become talent destinations.</h1>
-            <p class="hero-subtitle">With over a decade of experience in marketing, specialising in recruitment marketing and employer branding, I partner with organisations to attract, engage, and retain the right talent through strategic, data-driven approaches.</p>
-            <div class="hero-cta">
-                <a href="/contact" class="btn btn-primary">Get In Touch</a>
-                <a href="#services" class="btn btn-secondary">Explore My Services</a>
+            <h1 class="hero-title">AI-native marketing leadership in <em>healthcare technology.</em></h1>
+            <p class="hero-subtitle">Notes from the front line of marketing's AI transformation.</p>
+            <div class="hero-cta-row">
+                <a href="/blog" class="btn btn-primary btn-lg">Read the Blog <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="/contact" class="btn btn-secondary btn-lg">Invite Me to Speak</a>
             </div>
-            <p class="hero-affiliation">Director of Marketing Consulting at <a href="https://www.cpl.com/ie/for-clients/cpl-services/future-of-work-institute" target="_blank" rel="noopener">Cpl's Future of Work Institute</a></p>
         </div>
     </header>
 
+    <section class="value-props">
+        <div class="container">
+            <div class="value-props-header reveal">
+                <p class="value-props-bracket">[ On this site ]</p>
+                <div class="value-props-title-row">
+                    <svg class="value-props-arrow value-props-arrow--left" width="48" height="32" viewBox="0 0 48 32" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M4 16c12-8 24-8 40 4"/><path d="M38 14l6 6-8 2"/></svg>
+                    <h2>3 Themes I <em>Write About</em></h2>
+                    <svg class="value-props-arrow value-props-arrow--right" width="48" height="32" viewBox="0 0 48 32" fill="none" stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round"><path d="M44 16c-12-8-24-8-40 4"/><path d="M10 14l-6 6 8 2"/></svg>
+                </div>
+            </div>
+            <div class="value-props-grid">
+                <div class="value-prop-card reveal reveal-delay-1">
+                    <div class="value-prop-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    </div>
+                    <h4>Healthtech Marketing</h4>
+                    <p>Marketing healthcare technology means earning the trust of clinicians, executives, and regulators at the same time. I write about what works when the buyer is a hospital and the stakes are patient care.</p>
+                </div>
+                <div class="value-prop-card reveal reveal-delay-2">
+                    <div class="value-prop-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <h4>AI in Marketing</h4>
+                    <p>I build AI into the day-to-day work of marketing teams and share what actually holds up in practice: the workflows, the tooling, and the judgement calls automation cannot make.</p>
+                </div>
+                <div class="value-prop-card reveal reveal-delay-3">
+                    <div class="value-prop-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                    </div>
+                    <h4>Marketing Leadership</h4>
+                    <p>Lessons from leading multi-market B2B programmes: building teams, proving ROI to the board, and turning marketing into a growth engine rather than a cost centre.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="about" class="about">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <p class="section-eyebrow">About Me</p>
-                    <h2>Turning talent challenges into competitive advantages.</h2>
-                    <p>I am a seasoned marketing and brand expert with deep experience developing and executing multi-market talent attraction programmes across the globe.</p>
-                    <p>My work spans the full spectrum of talent attraction, from conducting comprehensive recruitment marketing audits to developing and executing employer brand strategies that deliver measurable results. I translate complex employer brand strategies into compelling candidate experiences that attract diverse, high-calibre talent.</p>
-                    <p>I am based in Dublin, Ireland, and work with organisations locally and across Europe and beyond.</p>
-                </div>
-                <div class="about-highlights">
-                    <h3>Core Expertise</h3>
-                    <ul class="expertise-list">
-                        <li>Recruitment Marketing Strategy & Execution</li>
-                        <li>Employer Brand Development</li>
-                        <li>Employer Value Proposition (EVP) Development & Localisation</li>
-                        <li>Data-Driven Talent Intelligence</li>
-                        <li>Candidate Experience Design</li>
-                        <li>Multi-Market Campaign Execution</li>
-                    </ul>
-                    <h3>Education & Credentials</h3>
-                    <ul class="education-list">
-                        <li>Mini MBA in Brand Management, Marketing Week</li>
-                        <li>Mini MBA in Marketing, Marketing Week</li>
-                        <li>Digital Psychology & Persuasion, CXL</li>
-                        <li>BSc Computer Science, Budapest University of Technology</li>
-                    </ul>
-                    <h3>Recognition</h3>
-                    <ul class="education-list">
-                        <li>Business & Finance CMO 100 Index (2023, 2024, 2025)</li>
-                        <li>Winner, Best in Recruitment, Spider Awards</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <p class="section-eyebrow">Services</p>
-            <h2>How I can help your organisation.</h2>
-            <p class="section-intro">I offer a range of recruitment marketing and employer branding services, from strategic audits to hands-on execution. Each engagement is tailored to your organisation's specific needs and objectives.</p>
-            <p class="services-delivery">All services are delivered through <a href="https://www.cpl.com/ie/for-clients/cpl-services/future-of-work-institute" target="_blank" rel="noopener">Cpl's Future of Work Institute</a>.</p>
-
-            <h3 class="services-category">Recruitment Marketing</h3>
-            <div class="services-grid">
-                <a href="/services/recruitment-marketing-audit" class="service-card service-card-link">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                    </div>
-                    <h4>Recruitment Marketing Audit</h4>
-                    <p>Comprehensive evaluation of your recruitment marketing efforts with actionable recommendations for improvement.</p>
-                    <span class="service-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </a>
-
-                <a href="/services/recruitment-marketing-strategy" class="service-card service-card-link">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
-                        </svg>
-                    </div>
-                    <h4>Recruitment Marketing Strategy</h4>
-                    <p>Data-driven recruitment marketing strategy aligned with your talent acquisition objectives and employer brand.</p>
-                    <span class="service-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </a>
-
-                <a href="/services/outsourced-recruitment-marketing" class="service-card service-card-link">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                    </div>
-                    <h4>Outsourced Recruitment Marketing</h4>
-                    <p>Fractional recruitment marketing support with dedicated days per week for ongoing strategic and hands-on execution.</p>
-                    <span class="service-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </a>
-
-                <a href="/services/market-research" class="service-card service-card-link">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                        </svg>
-                    </div>
-                    <h4>Market Research & Tracking</h4>
-                    <p>Regular research to monitor your employer brand health, competitive positioning, and candidate perceptions.</p>
-                    <span class="service-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </a>
-
-                <a href="/services/pilots-poc" class="service-card service-card-link">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-                        </svg>
-                    </div>
-                    <h4>Pilots & Proof of Concepts</h4>
-                    <p>Structured pilot programmes to test new recruitment marketing approaches before full-scale implementation.</p>
-                    <span class="service-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </a>
-
-                <a href="/services/recruitment-technology" class="service-card service-card-link">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-                        </svg>
-                    </div>
-                    <h4>Recruitment Technology</h4>
-                    <p>Expert guidance on selecting, implementing, and optimising recruitment marketing technology.</p>
-                    <span class="service-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </a>
-            </div>
-
-            <h3 class="services-category services-category--eb">Employer Branding</h3>
-            <div class="services-grid services-grid--eb">
-                <a href="/services/employer-brand-assessment" class="service-card service-card-link">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                        </svg>
-                    </div>
-                    <h4>Employer Brand Assessment</h4>
-                    <p>Comprehensive evaluation of your employer brand across internal and external touchpoints.</p>
-                    <span class="service-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </a>
-
-                <a href="/services/evp-development" class="service-card service-card-link">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-                        </svg>
-                    </div>
-                    <h4>EVP Development</h4>
-                    <p>Development of a compelling, authentic employer brand and EVP that differentiates your organisation.</p>
-                    <span class="service-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </a>
-
-                <a href="/services/employer-brand-activation" class="service-card service-card-link">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/>
-                        </svg>
-                    </div>
-                    <h4>Employer Brand Activation</h4>
-                    <p>Bringing your employer brand to life through integrated recruitment marketing programmes.</p>
-                    <span class="service-cta">Learn more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="results" class="results">
-        <div class="container">
-            <p class="section-eyebrow">Proven Results</p>
-            <h2>Measurable impact across industries.</h2>
-            <p class="section-intro">A track record of delivering tangible outcomes for organisations ranging from government bodies to global technology companies.</p>
-
-            <div class="results-grid">
-                <div class="result-card">
-                    <div class="result-stat">85%</div>
-                    <div class="result-label">YoY Growth in Applications</div>
-                    <p>Led recruitment marketing strategy for a large public sector organisation, delivering significant growth in applications through integrated digital campaigns and authentic video storytelling.</p>
-                    <span class="result-industry">Public Sector</span>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-stat">50%</div>
-                    <div class="result-label">Increase in Applications</div>
-                    <p>Developed localised employer brand story and optimised Glassdoor and Indeed presence for a large aviation organisation, resulting in significant brand amplification.</p>
-                    <span class="result-industry">Aviation</span>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-stat">8</div>
-                    <div class="result-label">Recruitment Marketing Audits Delivered</div>
-                    <p>Conducted comprehensive recruitment marketing audits for leading private and public sector organisations, identifying gaps and delivering actionable recommendations across people, process, and technology.</p>
-                    <span class="result-industry">Cross-Industry</span>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-stat">28%</div>
-                    <div class="result-label">Reduction in Media Costs</div>
-                    <p>Developed and executed multi-market B2C & B2B programme for a large technology company across EMEA, APAC, and Americas, delivering growth whilst reducing costs.</p>
-                    <span class="result-industry">Technology</span>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-stat">15%</div>
-                    <div class="result-label">Growth in 3 Months</div>
-                    <p>Built and scaled EMEA B2B acquisition programme for a large technology company through integrated digital marketing and precise audience targeting.</p>
-                    <span class="result-industry">Technology</span>
-                </div>
-
-                <div class="result-card">
-                    <div class="result-stat">71.5%</div>
-                    <div class="result-label">YoY Lead Growth</div>
-                    <p>Generated 340+ marketing-sourced high-intent client leads through omnichannel marketing strategies for a large staffing organisation.</p>
-                    <span class="result-industry">Staffing & Recruitment</span>
-                </div>
-            </div>
-
-            <div class="client-industries">
-                <h3>Experience across industries</h3>
-                <div class="industries-grid">
-                    <div class="industry-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
-                        </svg>
-                        <span>Pharmaceutical & Biotech</span>
-                    </div>
-                    <div class="industry-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                        </svg>
-                        <span>Public Sector & Government</span>
-                    </div>
-                    <div class="industry-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                        <span>Technology</span>
-                    </div>
-                    <div class="industry-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                        </svg>
-                        <span>Financial Services</span>
-                    </div>
-                    <div class="industry-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                        </svg>
-                        <span>Aviation & Travel</span>
-                    </div>
-                    <div class="industry-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                        </svg>
-                        <span>Healthcare</span>
-                    </div>
-                    <div class="industry-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                        </svg>
-                        <span>FMCG</span>
-                    </div>
-                    <div class="industry-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                        </svg>
-                        <span>Professional Services</span>
-                    </div>
-                </div>
+            <div class="about-content reveal">
+                <p class="section-eyebrow">About Me</p>
+                <h2>From multi-market campaigns to healthtech leadership.</h2>
+                <p>I am a marketing leader with more than a decade of experience building and executing multi-market B2B and B2C programmes across Europe, APAC, and the Americas.</p>
+                <p>Today I lead global marketing at Lanas Healthcare Technology. I am based in Dublin, Ireland, and I use this site to share what I learn about healthtech marketing, AI in marketing, and leading modern marketing teams. The views here are my own.</p>
+                <p><a href="/about">More about me and my career &rarr;</a></p>
             </div>
         </div>
     </section>
 
     <section id="speaking" class="speaking">
         <div class="container">
-            <p class="section-eyebrow">Speaking & Workshops</p>
-            <h2>Sharing knowledge and insights.</h2>
-            <p class="section-intro">I am available for speaking engagements, workshops, and panel discussions on recruitment marketing, employer branding, and the future of talent attraction.</p>
+            <div class="reveal">
+                <p class="section-eyebrow">Speaking &amp; Media</p>
+                <h2>Contributing to the marketing conversation.</h2>
+                <p class="section-intro">I am available for speaking engagements, panel discussions, and podcast conversations on healthtech marketing, AI in marketing, and marketing leadership.</p>
+            </div>
 
-            <div class="speaking-grid">
+            <div class="speaking-grid speaking-grid--three">
                 <div class="speaking-card">
                     <div class="speaking-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -381,17 +140,7 @@ const keywords = "recruitment marketing, employer branding, employer brand, EVP,
                         </svg>
                     </div>
                     <h4>Keynote Speaking</h4>
-                    <p>Engaging presentations on recruitment marketing trends, employer branding best practices, and the impact of AI on talent attraction.</p>
-                </div>
-
-                <div class="speaking-card">
-                    <div class="speaking-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                        </svg>
-                    </div>
-                    <h4>Workshops & Masterclasses</h4>
-                    <p>Interactive sessions helping teams develop recruitment marketing capabilities, refine their employer brand, or build talent attraction strategies.</p>
+                    <p>Engaging presentations on healthtech marketing, the impact of AI on how marketing teams work, and building modern B2B marketing functions.</p>
                 </div>
 
                 <div class="speaking-card">
@@ -401,7 +150,7 @@ const keywords = "recruitment marketing, employer branding, employer brand, EVP,
                         </svg>
                     </div>
                     <h4>Panel Discussions</h4>
-                    <p>Contributing expert perspectives on talent acquisition, employer branding, and marketing trends at industry events and conferences.</p>
+                    <p>Contributing perspectives on marketing leadership, healthcare technology, and the changing shape of B2B marketing at industry events and conferences.</p>
                 </div>
 
                 <div class="speaking-card">
@@ -410,13 +159,13 @@ const keywords = "recruitment marketing, employer branding, employer brand, EVP,
                             <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                         </svg>
                     </div>
-                    <h4>Corporate Training</h4>
-                    <p>Bespoke training programmes for HR and TA teams on recruitment marketing fundamentals and advanced strategies.</p>
+                    <h4>Podcasts &amp; Media</h4>
+                    <p>Guest conversations on marketing, AI, and healthcare technology, sharing practical experience rather than theory.</p>
                 </div>
             </div>
 
             <div class="speaking-cta">
-                <p>Interested in having me speak at your event or facilitate a workshop?</p>
+                <p>Interested in having me speak at your event or join your podcast?</p>
                 <a href="/contact" class="btn btn-primary">Get in Touch</a>
             </div>
         </div>
@@ -424,9 +173,11 @@ const keywords = "recruitment marketing, employer branding, employer brand, EVP,
 
     <section id="blog" class="blog">
         <div class="container">
-            <p class="section-eyebrow">Insights</p>
-            <h2>Thoughts on recruitment marketing and employer branding.</h2>
-            <p class="section-intro">Articles, insights, and perspectives on talent attraction, employer branding, and the evolving world of recruitment marketing.</p>
+            <div class="reveal">
+                <p class="section-eyebrow">Writing</p>
+                <h2>Thoughts on marketing, AI, and healthcare technology.</h2>
+                <p class="section-intro"><a href="/blog">Browse all articles &rarr;</a></p>
+            </div>
 
             <div class="blog-grid blog-grid-two">
                 {recentPosts.map(post => (
@@ -458,8 +209,8 @@ const keywords = "recruitment marketing, employer branding, employer brand, EVP,
             </div>
 
             <div class="blog-connect">
-                <h3>Stay in touch</h3>
-                <p>Connect with me on LinkedIn to stay updated on recruitment marketing and employer branding. I regularly share insights, trends, and practical advice in these areas.</p>
+                <h3>Stay Connected</h3>
+                <p>Follow me on LinkedIn for regular insights on healthtech marketing, AI in marketing, and marketing leadership.</p>
                 <a href="https://www.linkedin.com/in/ferencg/" target="_blank" rel="noopener" class="linkedin-link linkedin-link-large">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
@@ -472,15 +223,14 @@ const keywords = "recruitment marketing, employer branding, employer brand, EVP,
 
     <section id="contact" class="contact-cta-section">
         <div class="container">
-            <div class="contact-cta-content">
+            <div class="contact-cta-content reveal">
                 <p class="section-eyebrow">Get in Touch</p>
-                <h2>Let's discuss your talent challenges.</h2>
-                <p>Whether you need a recruitment marketing audit, want to strengthen your employer brand, or are looking for ongoing support, I would be happy to explore how I can help your organisation.</p>
-                <p class="contact-delivery">All engagements are delivered through <a href="https://www.cpl.com/ie/for-clients/cpl-services/future-of-work-institute" target="_blank" rel="noopener">Cpl's Future of Work Institute</a>.</p>
+                <h2>Let's talk marketing.</h2>
+                <p>Whether you want me to speak at your event, join a podcast, or simply compare notes on healthtech marketing and AI, I would love to hear from you.</p>
                 <div class="contact-cta-buttons">
                     <a href="/contact" class="btn btn-primary">Send a Message</a>
-                    <a href="https://www.linkedin.com/in/ferencg/" target="_blank" rel="noopener" class="btn btn-secondary">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="margin-right: 8px;">
+                    <a href="https://www.linkedin.com/in/ferencg/" target="_blank" rel="noopener" class="btn btn-secondary btn-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                         Connect on LinkedIn
@@ -490,3 +240,36 @@ const keywords = "recruitment marketing, employer branding, employer brand, EVP,
         </div>
     </section>
 </BaseLayout>
+
+<style>
+    /* Centered single-column hero (no split stat column) */
+    .hero-content .hero-intro {
+        justify-content: center;
+    }
+
+    .hero-content .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-content .hero-cta-row {
+        justify-content: center;
+    }
+
+    /* Three speaking cards instead of four */
+    @media (min-width: 769px) {
+        .speaking-grid--three {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .about-content {
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .about-content .section-eyebrow {
+        justify-content: center;
+    }
+</style>

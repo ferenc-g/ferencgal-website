@@ -69,10 +69,12 @@ const { quote, author, role, source, color = 'accent' } = Astro.props;
   }
 
   .quote-text {
-    font-size: var(--font-size-lg);
+    font-family: var(--font-display);
+    font-size: var(--font-size-xl);
     font-style: italic;
-    color: var(--color-gray-800);
-    line-height: 1.6;
+    font-weight: 400;
+    color: var(--color-gray-900);
+    line-height: 1.5;
     margin: 0 0 var(--spacing-md) 0;
   }
 

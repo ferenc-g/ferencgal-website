@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "About Ferenc Gál | Marketing Leader in Healthcare Technology";
+const description = "Ferenc Gál is Global Marketing Lead at Lanas Healthcare Technology, with more than a decade of multi-market B2B and B2C marketing experience across Europe, APAC, and the Americas.";
+const keywords = "Ferenc Gál, about, marketing leader, healthtech marketing, AI in marketing, marketing leadership, Dublin, Ireland";
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+    <header class="about-page-header">
+        <div class="container">
+            <div class="about-page-intro">
+                <img src="/fg-headshot.webp" alt="Ferenc Gál, Global Marketing Lead at Lanas Healthcare Technology" width="160" height="160" loading="eager">
+                <div>
+                    <p class="section-eyebrow">About</p>
+                    <h1>Marketing leader in <em>healthcare technology.</em></h1>
+                    <p class="about-page-role">Global Marketing Lead at Lanas Healthcare Technology, based in Dublin, Ireland.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-page-body">
+        <div class="container">
+            <div class="about-page-grid">
+                <div class="about-page-story">
+                    <h2>My story</h2>
+                    <p>I am a marketing leader with more than a decade of experience building and executing multi-market B2B and B2C programmes across Europe, APAC, and the Americas. My career has taken me through technology, aviation, financial services, healthcare, and the public sector, including Fortune 500 technology companies, national carriers, and large hospital groups.</p>
+                    <p>Along the way I spent an award-winning chapter in talent attraction and employer branding at Cpl in Ireland, where I was recognised in the Business &amp; Finance CMO 100 three years running and won Best in Recruitment at the Spider Awards.</p>
+                    <p>Today I lead global marketing at Lanas Healthcare Technology, where I am building an AI-native marketing function in one of the world's most important industries. This site is where I write about what I learn: healthtech marketing, AI in marketing, and marketing leadership. The views here are my own.</p>
+                </div>
+                <div class="about-highlights">
+                    <h3>Core Expertise</h3>
+                    <ul class="expertise-list">
+                        <li>B2B Marketing Strategy</li>
+                        <li>Healthtech Go-to-Market</li>
+                        <li>AI-Powered Marketing Operations</li>
+                        <li>Brand &amp; Positioning</li>
+                        <li>Demand Generation &amp; Growth</li>
+                        <li>Marketing Team Leadership</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="results about-page-results">
+        <div class="container">
+            <div class="reveal">
+                <p class="section-eyebrow">Career Highlights</p>
+                <h2>A career built on measurable outcomes.</h2>
+                <p class="section-intro">A few results from previous roles across technology, consulting, and the public sector. They shaped how I approach marketing leadership today.</p>
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <span class="result-before">From inconsistent leads to</span>
+                    <div class="result-stat">71.5%</div>
+                    <div class="result-label">YoY Lead Growth</div>
+                    <p>Generated 340+ marketing-sourced, high-intent client leads through omnichannel marketing strategies for a large B2B services organisation.</p>
+                    <span class="result-industry">B2B Services</span>
+                </div>
+
+                <div class="result-card">
+                    <span class="result-before">From overspending to</span>
+                    <div class="result-stat">28%</div>
+                    <div class="result-label">Reduction in Media Costs</div>
+                    <p>Developed and executed a multi-market B2C &amp; B2B programme for a large technology company across EMEA, APAC, and the Americas, delivering growth whilst reducing costs.</p>
+                    <span class="result-industry">Technology</span>
+                </div>
+
+                <div class="result-card">
+                    <span class="result-before">From zero pipeline to</span>
+                    <div class="result-stat">15%</div>
+                    <div class="result-label">Growth in 3 Months</div>
+                    <p>Built and scaled an EMEA B2B acquisition programme for a large technology company through integrated digital marketing and precise audience targeting.</p>
+                    <span class="result-industry">Technology</span>
+                </div>
+
+                <div class="result-card">
+                    <span class="result-before">From stagnant pipelines to</span>
+                    <div class="result-stat">85%</div>
+                    <div class="result-label">YoY Growth in Applications</div>
+                    <p>Led marketing strategy for a large public sector organisation in an earlier chapter of my career, delivering significant growth through integrated digital campaigns and authentic video storytelling.</p>
+                    <span class="result-industry">Public Sector</span>
+                </div>
+
+                <div class="result-card">
+                    <span class="result-before">From low brand visibility to</span>
+                    <div class="result-stat">50%</div>
+                    <div class="result-label">Increase in Applications</div>
+                    <p>Developed a localised brand story and optimised review-platform presence for a large aviation organisation, resulting in significant brand amplification.</p>
+                    <span class="result-industry">Aviation</span>
+                </div>
+
+                <div class="result-card">
+                    <span class="result-before">From blind spots to clarity across</span>
+                    <div class="result-stat">8</div>
+                    <div class="result-label">Marketing Audits Delivered</div>
+                    <p>Conducted comprehensive marketing audits for leading private and public sector organisations, identifying gaps and delivering actionable recommendations across people, process, and technology.</p>
+                    <span class="result-industry">Cross-Industry</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta-section">
+        <div class="container">
+            <div class="contact-cta-content reveal">
+                <p class="section-eyebrow">Next</p>
+                <h2>Read my writing, or get in touch.</h2>
+                <p>The best way to get to know how I think is the blog. And if you would like me to contribute to your event or podcast, I would love to hear from you.</p>
+                <div class="contact-cta-buttons">
+                    <a href="/blog" class="btn btn-primary">Read the Blog</a>
+                    <a href="/contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .about-page-header {
+        padding: calc(var(--nav-height) + var(--spacing-2xl)) var(--spacing-lg) var(--spacing-xl);
+        background-color: var(--color-gray-50);
+    }
+
+    .about-page-intro {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xl);
+        max-width: 860px;
+        margin: 0 auto;
+    }
+
+    .about-page-intro img {
+        width: 160px;
+        height: 160px;
+        border-radius: var(--radius-full);
+        object-fit: cover;
+        border: 3px solid var(--color-white);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        flex-shrink: 0;
+    }
+
+    .about-page-intro h1 {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.15;
+        color: var(--color-primary-dark);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .about-page-intro h1 em {
+        color: var(--color-accent);
+        font-style: normal;
+    }
+
+    .about-page-role {
+        color: var(--color-gray-500);
+        font-size: var(--font-size-base);
+    }
+
+    .about-page-body {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .about-page-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: var(--spacing-3xl);
+        align-items: start;
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    .about-page-story h2 {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: var(--font-size-2xl);
+        color: var(--color-primary-dark);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .about-page-story p {
+        color: var(--color-gray-600);
+        line-height: 1.8;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .about-page-results {
+        padding-top: var(--spacing-xl);
+    }
+
+    @media (max-width: 768px) {
+        .about-page-intro {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about-page-intro .section-eyebrow {
+            justify-content: center;
+        }
+
+        .about-page-grid {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xl);
+        }
+    }
+</style>

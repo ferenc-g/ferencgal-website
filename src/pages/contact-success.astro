@@ -1,0 +1,208 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = "Message Sent | Ferenc Gál";
+const description = "Thank you for reaching out. I'll be in touch within 24-48 hours.";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="success-page">
+    <div class="container">
+      <div class="success-content">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+        </div>
+        <h1>Your message is in my inbox.</h1>
+        <p class="success-desc">Thank you for reaching out. I read every message personally and will get back to you with initial thoughts on your situation.</p>
+
+        <div class="success-timeline">
+          <h2>Here's what happens next:</h2>
+          <div class="timeline-steps">
+            <div class="timeline-step">
+              <span class="timeline-number">1</span>
+              <div class="timeline-detail">
+                <span class="timeline-title">I review your message</span>
+                <span class="timeline-time">Within 24 hours</span>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="timeline-number">2</span>
+              <div class="timeline-detail">
+                <span class="timeline-title">I reply personally</span>
+                <span class="timeline-time">Within 24-48 hours</span>
+              </div>
+            </div>
+            <div class="timeline-step">
+              <span class="timeline-number">3</span>
+              <div class="timeline-detail">
+                <span class="timeline-title">We take it from there, whether that's a call, an event, or a podcast recording</span>
+                <span class="timeline-time">At a time that suits you</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="success-resources">
+          <h3>While you wait, you might find these useful:</h3>
+          <div class="success-links">
+            <a href="/blog" class="success-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+              <span>Read the latest on healthtech marketing and AI</span>
+            </a>
+            <a href="https://www.linkedin.com/in/ferencg/" target="_blank" rel="noopener" class="success-link">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              <span>Connect on LinkedIn for regular insights</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .success-page {
+    padding-top: calc(var(--nav-height) + var(--spacing-3xl));
+    padding-bottom: var(--spacing-4xl);
+  }
+
+  .success-content {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .success-icon {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .success-icon svg {
+    stroke: var(--color-accent);
+  }
+
+  .success-content h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .success-desc {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-500);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .success-timeline {
+    background-color: var(--color-gray-50);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+    text-align: left;
+  }
+
+  .success-timeline h2 {
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-gray-400);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .timeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .timeline-step {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+  }
+
+  .timeline-number {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+  }
+
+  .timeline-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding-top: 0.2rem;
+  }
+
+  .timeline-title {
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    color: var(--color-gray-800);
+  }
+
+  .timeline-time {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-400);
+  }
+
+  .success-resources {
+    text-align: left;
+  }
+
+  .success-resources h3 {
+    font-family: var(--font-body);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--color-gray-500);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .success-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .success-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: var(--color-gray-600);
+    transition: all var(--transition-base);
+  }
+
+  .success-link:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateX(4px);
+  }
+
+  .success-link svg {
+    flex-shrink: 0;
+    color: var(--color-accent);
+  }
+
+  .success-link span {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+</style>

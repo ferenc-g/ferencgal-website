@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+const sorted = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const currentPosts = sorted.filter(post => !post.data.archived);
+const archivedPosts = sorted.filter(post => post.data.archived);
+
+const title = "Blog | Ferenc Gál";
+const description = "Articles on healthtech marketing, AI in marketing, and marketing leadership by Ferenc Gál, Global Marketing Lead at Lanas Healthcare Technology.";
+const keywords = "healthtech marketing blog, AI in marketing, marketing leadership, marketing strategy articles, Ferenc Gál";
+
+const formatDate = (date: Date) => date.toLocaleDateString('en-GB', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+});
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+    <header class="blog-index-header">
+        <div class="container">
+            <p class="section-eyebrow">Writing</p>
+            <h1>Thoughts on marketing, AI, and <em>healthcare technology.</em></h1>
+            <p class="blog-index-intro">Articles and perspectives on healthtech marketing, AI in marketing, and marketing leadership. Written by me, from the work itself.</p>
+        </div>
+    </header>
+
+    <section class="blog-index">
+        <div class="container">
+            {currentPosts.length > 0 ? (
+                <div class="blog-grid blog-grid-two">
+                    {currentPosts.map(post => (
+                        <article class="blog-card">
+                            <div class="blog-card-content">
+                                <div class="blog-card-meta">
+                                    <span class="blog-category">{post.data.category}</span>
+                                    <time datetime={post.data.pubDate.toISOString().split('T')[0]}>{formatDate(post.data.pubDate)}</time>
+                                </div>
+                                <h3>{post.data.title}</h3>
+                                <p>{post.data.description}</p>
+                                <a href={`/blog/${post.slug}`} class="blog-link">Read the full article &rarr;</a>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            ) : (
+                <div class="blog-empty">
+                    <p>New articles on healthtech marketing, AI in marketing, and marketing leadership are in the works. In the meantime, <a href="https://www.linkedin.com/in/ferencg/" target="_blank" rel="noopener">follow me on LinkedIn</a> for regular insights.</p>
+                </div>
+            )}
+
+            {archivedPosts.length > 0 && (
+                <div class="blog-archive">
+                    <h2>From the archive</h2>
+                    <p class="blog-archive-intro">Earlier writing from my years in talent attraction and employer branding, kept here for reference.</p>
+                    <div class="blog-grid blog-grid-two">
+                        {archivedPosts.map(post => (
+                            <article class="blog-card">
+                                <div class="blog-card-content">
+                                    <div class="blog-card-meta">
+                                        <span class="blog-category">{post.data.category}</span>
+                                        <time datetime={post.data.pubDate.toISOString().split('T')[0]}>{formatDate(post.data.pubDate)}</time>
+                                    </div>
+                                    <h3>{post.data.title}</h3>
+                                    <p>{post.data.description}</p>
+                                    <a href={`/blog/${post.slug}`} class="blog-link">Read the full article &rarr;</a>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                </div>
+            )}
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    .blog-index-header {
+        padding: calc(var(--nav-height) + var(--spacing-2xl)) var(--spacing-lg) var(--spacing-xl);
+        background-color: var(--color-gray-50);
+        text-align: center;
+    }
+
+    .blog-index-header .container {
+        max-width: 720px;
+    }
+
+    .blog-index-header h1 {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.15;
+        color: var(--color-primary-dark);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .blog-index-header h1 em {
+        color: var(--color-accent);
+        font-style: normal;
+    }
+
+    .blog-index-header .section-eyebrow {
+        justify-content: center;
+    }
+
+    .blog-index-intro {
+        color: var(--color-gray-500);
+        font-size: var(--font-size-lg);
+        line-height: 1.7;
+    }
+
+    .blog-index {
+        padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-3xl);
+    }
+
+    .blog-empty {
+        max-width: 640px;
+        margin: 0 auto var(--spacing-2xl);
+        text-align: center;
+        background-color: var(--color-gray-50);
+        border: 1px solid var(--color-gray-200);
+        border-radius: var(--radius-lg);
+        padding: var(--spacing-xl);
+    }
+
+    .blog-empty p {
+        color: var(--color-gray-600);
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .blog-empty a {
+        color: var(--color-accent);
+    }
+
+    .blog-archive {
+        margin-top: var(--spacing-2xl);
+        border-top: 1px solid var(--color-gray-200);
+        padding-top: var(--spacing-2xl);
+    }
+
+    .blog-archive h2 {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: var(--font-size-2xl);
+        color: var(--color-primary-dark);
+        margin-bottom: var(--spacing-xs);
+        text-align: center;
+    }
+
+    .blog-archive-intro {
+        color: var(--color-gray-500);
+        text-align: center;
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .blog-card-meta {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+    }
+
+    .blog-card-meta time {
+        font-size: var(--font-size-xs);
+        color: var(--color-gray-400);
+    }
+</style>
